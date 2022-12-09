@@ -1,15 +1,21 @@
-# Medicines Management Prototype
+# Master Data Replacement Prototype
 
+&ensp;
 ## Project Setup
 ### Cloning the project
 Clone the project using git:
 ```shell
-git clone git@dps-gitlab.service.nhsbsa:prescriptions/master-data-replacement-prototype.git
+git clone https://github.com/nhsbsa/medicines-management-prototype.git
+```
+or
+```shell
+git clone git@github.com:nhsbsa/medicines-management-prototype.git
 ```
 ### NPM Setup
 Once the project is cloned, run the following command to download and install node dependencies:
 ```shell
 npm install
+npm install gulp
 ```
 If there are issues downloading dependencies, you may need to add the nhsbsa npm repository.
 To do this:
@@ -24,65 +30,13 @@ strict-ssl=false
 Install the live reload plugin for your browser
 * [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)
 
-## Heroku Setup
-Heroku acts as a seperate repository which is added as a remote to this repository.
-In order to be able to push code to both repositories, you need to be added as a contributor to
-the Heroku repository. Contact [Jannes-Proctor-Leake](mailto:janssen.howitson-morley@nhs.net?subject=[Master data replacement Prototype Heroku Access]) to be added.
-
-The Heroku app dashboard can be found [here](https://dashboard.heroku.com/apps/master-data-replacement-prototype).
-### Dependencies
-In order to push and build to the Heroku repository, the [Heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli) 
-needs installing through npm:
-```shell
-npm install -g heroku
-```
-
-### Authentication
-In order to push to the Heroku repository, you need to be authenticated on your machine with Heroku:
-```shell
-heroku login
-```
-
-Your browser will open a window for you to complete the login process.
-
-### Remote repositories
-Since Heroku builds itself when a user pushes code to its repository, and the code is hosted on GitLab,
-new remotes need to be added to your local project so that when you push code, it pushes to both
-the repository on GitLab and the repository on Heroku.
-
-1. Add Heroku remote to your local repository:
-```shell
-heroku git:remote -a master-data-replacement
-```
-2. Add GitLab origin as remote (This shouldn't be needed as it should already exist but just in case)
-```shell
-git remote add origin git@dps-gitlab.service.nhsbsa:prescriptions/master-data-replacement-prototype.git
-```
-3. Add Heroku repository as a push destination
-```shell
-git remote set-url --push --add origin https://git.heroku.com/master-data-replacement.git
-```
-4. Add GitLab repository as a push destination (required as the previous command overrides 
-   the defaults so you need to re-add the GitLab repository):
-```shell
-git remote set-url --push --add origin git@dps-gitlab.service.nhsbsa:prescriptions/master-data-replacement-prototype.git
-```
-5. Finally check your local repository remotes:
-```shell
-git remote -v
-# Should be similar to the following:
-# heroku  https://git.heroku.com/master-data-replacement.git (fetch)
-# heroku  https://git.heroku.com/master-data-replacement.git (push)
-# origin  git@dps-gitlab.service.nhsbsa:prescriptions/master-data-replacement-prototype.git (fetch)
-# origin  https://git.heroku.com/master-data-replacement.git (push)
-# origin  git@dps-gitlab.service.nhsbsa:prescriptions/master-data-replacement-prototype.git (push)
-```
-
-Now when code is pushed, it should update both repositories and in turn, also deploy the Heroku app
-automatically.
-
+&ensp;
+***
+&ensp;
 ## Running the Prototype locally
 To run the prototype locally, use gulp:
+
+
 ```shell
 gulp
 ```
@@ -96,3 +50,40 @@ Browser sync settings can be accessed on http://localhost:3001.
 ```shell
 pa11y-ci -c pa11y.json
 ```
+&ensp;
+***
+&ensp;
+## Procedure for merging branches
+Pull in the latest version of main locally using 
+
+```git pull origin main```
+
+Create a local branch using your initials followed by /. The describe the change, using the Jira ticket number if you have it.
+
+```For example, mpl/MM-700-discontinuation-journey```
+
+Make your changes locally and then push up to Github using your IDE commit tab, or using the following commands in your terminal:
+
+```
+git add .
+git commit -m "change comments go here"
+git push origin local-branch-name
+```
+&ensp;
+
+| ![image](https://user-images.githubusercontent.com/111366792/206462599-1694bc16-e187-4f2b-b970-9c68f31aa2ce.png) |
+|-|
+<strong>Once pushed, there should be a highlight at the top of the repo asking to 'compare and pull request'. Select this button.</strong>
+<p>&nbsp;</p>
+
+| ![image](https://user-images.githubusercontent.com/111366792/206463076-ce8b10d2-cdc1-4d77-b1a3-71f7b58158cf.png) |
+|-|
+<strong>Then you need to add a reviewer and create the pull request<strong>
+<p>&nbsp;</p>
+
+| ![image](https://user-images.githubusercontent.com/111366792/206469532-0151b98e-40c1-4d11-b7c2-6a4dee1d3f82.png) |
+|-|
+<strong>The reviewer will be notified and will review the changes before marking it as being able to be merged. Then it can be merged in to main from the pull request, and thus deployed to Heroku. If the reviewer is able to merge this on their side then they will notify the user who did the pull request that it has been completed. <strong>
+<p>&nbsp;</p>
+
+

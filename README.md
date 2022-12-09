@@ -45,6 +45,8 @@ The prototype will then open a window in your browser on http://localhost:3000.
 
 Browser sync settings can be accessed on http://localhost:3001.
 
+&ensp;
+
 ## Running Pa11y accessibility checks
  
 ```shell

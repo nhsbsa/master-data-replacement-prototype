@@ -49,9 +49,37 @@ Browser sync settings can be accessed on http://localhost:3001.
 
 ## Running Pa11y accessibility checks
  
+install pa11y-ci using npm:
+```shell
+npm install -g pa11y-ci
+```
+then set up a json file with the name pa11y.json, with the below contents.
+
+```shell
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 10000,
+    "viewport": {
+      "width": 1000,
+      "height": 1000
+    }
+  },
+
+  "urls": [
+    "http://localhost:3000/"
+  ]
+}
+```
+
+These contents can be changed, such as the viewport width and height. You can also add all of your pages in the urls section.
+&ensp;
+Then run the following command in your terminal to activate pa11y. 
 ```shell
 pa11y-ci -c pa11y.json
 ```
+For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci)
+
 &ensp;
 ***
 &ensp;

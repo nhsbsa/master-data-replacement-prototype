@@ -1,0 +1,124 @@
+
+
+{% extends "base.html" %}
+
+
+
+{% block navcontent %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+    [data-browse-user='true'] {
+        display: none;
+    }
+</style>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+        <h1>Master data repository (MDR) home page
+        </h1>
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Current browse date 01/06/2022
+            </h1>
+        </legend>
+
+        <main id="maincontent" role="main">
+            <section class="nhsuk-section">
+                <div class="nhsuk-width-container app-width-container">
+                    <ul class="nhsuk-grid-row nhsuk-card-group">
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a
+                                            href="main/Searchfor-page">Search</a></h2>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="../test/tree">Tree
+                                        view </a></h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="main/Setbrowsedate-page">Set
+                                        browse date </a></h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="main/Options-page">Options </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item" data-browse-user>
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="main/budget-financial-start-date">Prescribing budgets</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item" data-browse-user>
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="main/globalReference-page">Global reference </a>
+                                    </h2>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item" data-browse-user >
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="main/bulkmove-Viewcriteria-page">View bulk moves</a></h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                            <div class="nhsuk-card nhsuk-card--clickable">
+                                <div class="nhsuk-card__content" style="text-align:center">
+                                    <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="#">Help</a></h2>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+        </main>
+
+    </div>
+</div>
+</div>
+
+<script>
+    const browseUser = sessionStorage.getItem("browse-user");
+
+
+    if(browseUser == 'true') {
+        const allBrowseUserelements = document.querySelectorAll('[data-browse-user]');
+
+        allBrowseUserelements.forEach(element => {
+            element.dataset.browseUser="true";
+        });
+    }
+
+
+</script>
+{% endblock %}

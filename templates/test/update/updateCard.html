@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+
+
+
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Update - insert</h1>
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="../tree.html" class="nhsuk-back-link__link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Cancel-->
+<!--        </a>-->
+<!--    </div>-->
+
+
+<!--    <form action="">-->
+<!--        <div class="nhsuk-form-group">-->
+<!--            <fieldset class="nhsuk-fieldset">-->
+
+<!--                <legend class="nhsuk-fieldset__legend&#45;&#45;s">-->
+<!--                    <span class="nhsuk-fieldset__heading">What type of update would you like to carry out?</span>-->
+<!--                </legend>-->
+
+<!--                <div class=" nhsuk-radios">-->
+
+<!--                    <div class="nhsuk-radios__item">-->
+<!--                        <input type="radio" name="insert-type" value="edit" id="edit" class="nhsuk-radios__input">-->
+<!--                        <label for="edit" class="nhsuk-label nhsuk-radios__label">Edit</label>-->
+<!--                    </div>-->
+
+<!--                    <div class="nhsuk-radios__item" >-->
+<!--                        <input type="radio" name="insert-type" value="insert" id="insert" class="nhsuk-radios__input">-->
+<!--                        <label for="insert" class="nhsuk-label nhsuk-radios__label">Insert</label>-->
+
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </fieldset>-->
+<!--        </div>-->
+
+    <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+
+            <legend class="nhsuk-fieldset__legend--s">
+                <span class="nhsuk-fieldset__heading">Type</span>
+            </legend>
+
+            <div class=" nhsuk-radios ">
+
+                <div class="nhsuk-radios__item">
+                    <input type="radio" name="type" value="address" id="address" class="nhsuk-radios__input">
+                    <label for="address" class="nhsuk-label nhsuk-radios__label">Address</label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input type="radio" name="type" value="data" id="data" class="nhsuk-radios__input">
+                    <label for="data" class="nhsuk-label nhsuk-radios__label">Data</label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input type="radio" name="type" value="relationship" id="relationship" class="nhsuk-radios__input">
+                    <label for="relationship" class="nhsuk-label nhsuk-radios__label">Relationship</label>
+                </div>
+
+            </div>
+
+        </fieldset>
+    </div>
+
+        <a href="" class="nhsuk-button nhsuk-u-margin-top-3" id="continue">Continue</a>
+    </form>
+</div>
+
+
+<script>
+
+
+    const continueBtn = document.querySelector('#continue');
+
+    continueBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        // const insertTypeSelected = document.querySelector('input[type="radio"][name="insert-type"]:checked').value;
+        const insertArea = document.querySelector('input[type="radio"][name="type"]:checked').value;
+
+        // if(insertTypeSelected == 'insert'){
+
+            if(insertArea == 'address'){
+                window.location.href="insert-address";
+
+            }else if(insertArea == 'data'){
+                window.location.href="insert-attribute"
+
+            }else if(insertArea == 'relationship'){
+                window.location.href="insert-relationship-additional"
+            }
+
+        // }
+
+
+        // if(insertTypeSelected == 'edit'){
+        //
+        //     if(insertArea == 'address'){
+        //         //update href
+        //         alert(insertTypeSelected + " " +  insertArea);
+        //
+        //     }else if(insertArea == 'data'){
+        //         alert(insertTypeSelected + " " +  insertArea);
+        //
+        //     }else if(insertArea == 'relationship'){
+        //         alert(insertTypeSelected + " " +  insertArea);
+        //     }
+        //
+        // }
+
+
+    });
+
+
+
+
+
+</script>
+
+
+
+
+
+{% endblock %}

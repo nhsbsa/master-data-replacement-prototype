@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="Searchcriteria-page" class="nhsuk-breadcrumb__link">Search criteria</a>
+</li>
+{% endblock %}
+
+
+{% block content %}
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <p>
+                    No search results found
+                </p>
+                <ul class="nhsuk-list nhsuk-error-summary__list">
+                    <li>
+                        <a href="#example-error-1"> Try a different criteria or click to continue to the tree view</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column-two-thirds">
+            <h1>Search criteria for:
+            </h1>
+            <h2>Nurse
+            </h2>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                NPM code
+            </label>
+            <input class="nhsuk-input" id="code" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Name
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Address
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+                Other type
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1">Email</option>
+                <option value="2" selected>Telephone</option>
+                <option value="3" disabled>NHS.UK frontend option 3</option>
+            </select>
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Other search options
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+
+
+        <a class="nhsuk-button" type="submit " href="Searchresult-page" id="search">
+            Search
+        </a>
+    </div>
+</div>
+
+<script>
+
+    const searchBtn = document.querySelector('#search');
+    const field = document.querySelector('#code');
+
+    searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(field.value);
+
+        if(field.value == ""){
+         window.location = "Searchnoresult-page";
+        }else {
+        window.location="SearchResultsnontab-page";
+        }
+    }
+    );
+
+</script>
+{% endblock %}

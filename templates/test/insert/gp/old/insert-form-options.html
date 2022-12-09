@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item" xmlns="http://www.w3.org/1999/html">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../main/test/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-details" class="nhsuk-breadcrumb__link">GP Details</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert general practioner</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Bevan group practice</h2>
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+
+    <!--    <div class="nhsuk-back-link">-->
+    <!--        <a href="insert-type.html" class="nhsuk-back-link__link">-->
+    <!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+    <!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+    <!--            </svg>-->
+    <!--            Go back-->
+    <!--        </a>-->
+    <!--    </div>-->
+
+    <form action="">
+
+<!--        <div class="nhsuk-form-group">-->
+<!--            <label for="manipulation" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2">-->
+<!--                Name manipulation method-->
+<!--            </label>-->
+<!--            <select class="nhsuk-select" name="gender" id="manipulation">-->
+<!--                <option value="1" selected>1</option>-->
+<!--                <option value="2">2</option>-->
+<!--                <option value="3">3</option>-->
+<!--                <option value="4">4</option>-->
+<!--            </select>-->
+<!--        </div>-->
+
+        <div class="nhsuk-form-group">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                    <span class="nhsuk-label--s">Name manipulation method</span>
+                </legend>
+
+                <div class="nhsuk-hint">
+                    The name manipulation method dictates the way the doctor’s name appears on pre-printed prescriptions
+                </div>
+                <div class="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-1">
+                        <label class=" nhsuk-radio nhsuk-radios__label" for="option-1">Insert "Dr" and rotate surname and initials</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-2" value="2">
+                        <label class=" nhsuk-radio nhsuk-radios__label" for="option-2">No manipualation</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-3" value="3">
+                        <label class=" nhsuk-radio nhsuk-radios__label" for="option-3">Insert "Dr"</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-4">
+                        <label  class=" nhsuk-radio nhsuk-radios__label" for="option-4">Insert "Dr" and rotate surname and initials by first space </label>
+                    </div>
+                </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                    <p>General prescriber options</p>
+                </legend>
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                    Select all relevant options for the GP
+                </div>
+
+                <div class="nhsuk-checkboxes">
+                    <div class="nhsuk-checkboxes__item">
+                        <input type="checkbox" class="nhsuk-checkboxes__input" id="check-option-1" name="option" value="Limited service">
+                        <label class="nhsuk-label nhsuk-label--s nhsuk-checkboxes__label" for="check-option-1">Limited service</label>
+                    </div>
+                    <div class="nhsuk-checkboxes__item">
+                        <input type="checkbox" class="nhsuk-checkboxes__input" id="check-option-2" name="option" value="Prescribing only">
+                        <label class="nhsuk-label nhsuk-label--s nhsuk-checkboxes__label" for="check-option-2">Prescribing only</label>
+                    </div>
+                    <div class="nhsuk-checkboxes__item">
+                        <input type="checkbox" class="nhsuk-checkboxes__input" id="check-option-3" name="option" value="Salaried GP">
+                        <label class="nhsuk-label nhsuk-label--s nhsuk-checkboxes__label" for="check-option-3">Salaried GP</label>
+                    </div>
+                    <div class="nhsuk-checkboxes__item">
+                        <input type="checkbox" class="nhsuk-checkboxes__input" id="check-option-4" name="option" value="Suspended">
+                        <label class="nhsuk-label nhsuk-label--s nhsuk-checkboxes__label" for="check-option-4">Suspended</label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                    <span class="nhsuk-label--s">Make lead prescriber?</span>
+                </legend>
+                <div class="nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="lead-option-yes">
+                        <label class=" nhsuk-radio nhsuk-radios__label" for="lead-option-yes">Yes</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="manipulation" class="nhsuk-radios__input" id="lead-option-no">
+                        <label class=" nhsuk-radio nhsuk-radios__label" for="lead-option-no">No</label>
+                    </div>
+                </div>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-form-address" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

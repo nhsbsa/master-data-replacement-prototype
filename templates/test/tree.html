@@ -1,0 +1,2522 @@
+{% extends "base.html" %}
+
+{% block optional %}
+<!--<a style="color: white; float: right;" href="tree-optional" class="nhsuk-breadcrumb__link">Go to optional</a>-->
+{% endblock %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../test/index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+{% endblock %}
+
+
+{% block content %}
+
+<!--<style>-->
+<!--    details[open] + div{-->
+<!--        display: none;-->
+<!--    }-->
+
+<!--    .hide-card {-->
+<!--        display: none;-->
+<!--    }-->
+
+<!--     /*browse only user*/-->
+<!--     [data-browse-user='true'] {-->
+<!--         display: none !important;-->
+<!--     }-->
+
+<!--     .historic {-->
+<!--         border-left: 20px solid #ffb81C !important;-->
+
+<!--     }-->
+<!--        .present-day {-->
+<!--         border-left: 20px solid #ffffff !important;-->
+
+<!--     }-->
+
+<!--&lt;!&ndash;-->
+
+<!--&ndash;&gt;-->
+
+
+
+
+
+<!--</style>-->
+
+<div class="nhsuk-width-container-fluid">
+    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+
+                <details class="nhsuk-details" id="links" style="display: none;">
+                    <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">Show links</span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+
+                        <ul class="nhsuk-list" style="position: sticky; top:10px">
+                            <li>
+                                <a href="#GP Practice">GP Practice / Cost Centre Type</a>
+                            </li>
+                            <li>
+                                <a href="#GP Practice Indicator">GP Practice Indicator</a>
+                            </li>
+                            <li>
+                                <a href="#Payment Machine Code">Payment Machine Code</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </details>
+
+                <div>
+                    <div class="nhsuk-btn-show-tree" id="button--show-tree">Show the hierarchy tree</div>
+                    <div id="drug-hierarchy-tree>
+                    <nav aria-labelledby=" hierarchy-tree-view
+                    ">
+                    <h2 class="hierarchy-tree-heading" id="hierarchy-tree-view">Hierarchy tree</h2>
+                    </nav>
+
+                    <details class="nhsuk-details nhsuk-u-margin-bottom-0">
+                        <summary class="nhsuk-details__summary nhsuk-u-margin-bottom-0">
+    <span class="nhsuk-details__summary-text" id="link--understanding-icons-in-tree">
+      Icon guide
+    </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                            <table>
+                                <thead class="nhsuk-table__head" role="rowgroup">
+                                <tr>
+                                    <th class="nhsuk-table__header icon-width">Icon</th>
+                                    <th class="nhsuk-table__header">Description</th>
+                                </tr>
+                                </thead>
+                                <tbody class="nhsuk-table__body">
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <svg style="background-image: url(../images/icons/icon-nurse-blue.svg); background-repeat: no-repeat; width: 24px; height: 24px; vertical-align: middle; background-position-x: right;"></svg>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Nurse
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <svg style="background-image: url(../images/icons/icon-doctor-blue.svg); background-repeat: no-repeat; width: 24px; height: 24px; vertical-align: middle; background-position-x: right;"></svg>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Doctor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <svg style="background-image: url(../images/icons/icon-tick-circle-lge.svg); background-repeat: no-repeat; width: 24px; height: 24px; vertical-align: middle; background-position-x: right;"></svg>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Valid
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <svg style="background-image: url(../images/icons/icon-cross-square-pp.svg); background-repeat: no-repeat; width: 25px; height: 25px; vertical-align: middle; background-position-x: center;"></svg>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Invalid
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <svg style="background-image: url(../images/icons/warning.svg); background-repeat: no-repeat; width: 24px; height: 24px; vertical-align: middle; background-position-x: right;"></svg>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Discontinued
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--purple"
+                                        >C</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Country
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--orange"
+                                                style="">R</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Regional office of the NHS executive
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--white"
+                                                style="background-color: var(--nhs-bright-blue)"
+                                        >S</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Supplier
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag "
+                                                style="background-color: #606E80; border: 1px solid #212b32"
+                                        >H</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Health and wellbeing board area (HWA)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--purple"
+                                                style="background-color: var(--nhs-dark-grey)"
+                                        >C</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Contractor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--orange"
+                                                style="background-color: var(--nhs-light-green)"
+                                                style="">S</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        STP
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--white"
+                                                style="background-color: var(--nhs-warm-yellow)"
+                                        >T</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Hospital trust
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag"
+                                                style=" background-color: var(--nhs-dark-red); border: 1px solid #212b32"
+                                        >P</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Commissioner or provider in England
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--purple"
+                                                style="background-color: var(--nhs-pale-grey)"
+                                        >H</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Hospital
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--orange"
+                                                style="background-color: var(--nhs-aqua-green)">G</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        GP practice / Cost center
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag nhsuk-tag--white"
+                                                style="background-color: var(--nhs-dark-pink)"
+                                        >D</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Hospital Doctor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nhsuk-table__cell nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        <strong class="nhsuk-tag"
+                                                style=" background-color: var(--nhs-dark-green); border: 1px solid #212b32"
+                                        >G</strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        General Practioner
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="nhsuk-table__cell ">
+
+                                        <strong class="nhsuk-tag nhsuk-tag--green">
+                                            Future
+                                        </strong>
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Future dated
+                                    </td>
+                                </tr>
+
+<!--                                <strong class="nhsuk-tag nhsuk-tag&#45;&#45;green">-->
+<!--                                    Future-->
+<!--                                </strong>-->
+                                <tr>
+                                    <td class="nhsuk-table__cell ">
+
+                                        <strong class="nhsuk-tag nhsuk-tag--orange">
+                                            Historic
+                                        </strong>
+<!--                                        <img style="position:relative; background-color:#ffb81C;border: 1px solid #212b32 "-->
+<!--                                             width="26px" height="26px" src="../images/icons/icon-chevron-left.svg">-->
+
+
+                                    </td>
+                                    <td class="nhsuk-table__cell nhsuk-u-font-size-16 nhsuk-u-padding-top-2 nhsuk-u-padding-bottom-2">
+                                        Historic
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                    <div class="nhsuk-grid-column-full nhsuk-u-padding-left-0 nhsuk-u-margin-bottom-5"
+                         id="warning-buttons-js-disabled">
+                        <!--                        <div class="nhsuk-hide-btn-container ">-->
+                        <!--                            <a class="nhsuk-btn-hide-tree nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-1"-->
+                        <!--                               id="button&#45;&#45;hide-tree">Hide <span-->
+                        <!--                                    class="nhsuk-u-visually-hidden">the hierarchy</span>tree</a>-->
+                        <!--&lt;!&ndash;                            <a class="nhsuk-btn-show-full-screen" id="button&#45;&#45;expand-tree">Maximize <span&ndash;&gt;-->
+                        <!--&lt;!&ndash;                                    class="nhsuk-u-visually-hidden">the hierarchy</span>tree</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;                            <a class="nhsuk-btn-hide-full-screen" id="button&#45;&#45;minimize-tree">Minimize <span&ndash;&gt;-->
+                        <!--&lt;!&ndash;                                    class="nhsuk-u-visually-hidden">the hierarchy</span>tree</a>&ndash;&gt;-->
+                        <!--                        </div>-->
+
+                        <ul aria-activedescendant="ui-id-2" aria-live="polite"
+                            aria-multiselectable="true" aria-relevant="additions removals"
+                            class="ui-fancytree fancytree-container fancytree-plain fancytree-treefocus nhsuk-u-margin-top-4"
+                            id="ft-id-1"
+                            role="tree" tabindex="0">
+                            <li aria-expanded="true" aria-selected="false" class="fancytree-lastsib" id="ui-id-2"
+                                role="treeitem">
+                                    <span class="fancytree-node fancytree-active fancytree-expanded fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-c fancytree-ico-ef"
+                                          style="background-color: rgb(222, 224, 226); border: 1px solid rgb(118, 134, 146);"
+                                          tabindex="0">
+                                        <span aria-label="Expand button at VTM level" class="fancytree-expander"
+                                              id="vtm-104" role="button"></span>
+                                        <span class="fancytree-icon" role="presentation"></span>
+                                        <span class="fancytree-title"
+                                              style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(222, 224, 226); color: rgb(33, 43, 50); cursor: text;">
+                                            <a class="tree-link" href="#" id="link--tree-vtm-level-104" role="link">NHSBSA</a>
+                                        </span>
+                                    </span>
+
+                                <ul aria-live="polite" aria-relevant="additions removals" role="group" style="">
+                                    <li aria-expanded="true" aria-selected="false" class="fancytree-lastsib"
+                                        id="ui-id-3" role="treeitem">
+                                            <span class="fancytree-node fancytree-expanded fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-c fancytree-ico-ef"
+                                                  style="background-color: rgb(245, 252, 255); border: 1px solid rgb(118, 134, 146);"
+                                                  tabindex="0">
+                                                <span aria-label="Expand button at VMP level" class="fancytree-expander"
+                                                      id="vmp-1" role="button"></span>
+                                                <span class="fancytree-icon" role="presentation"></span>
+                                                <span class="fancytree-title"
+                                                      style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255); color: rgb(0, 94, 184);">
+                                                    <a class="tree-link" href="#" id="link--tree-vmp-level-1">1 : England</a>
+                                                </span>
+                                            </span>
+
+                                        <ul aria-live="polite" aria-relevant="additions removals" role="group" style="">
+
+                                            <li aria-expanded="false" aria-selected="false"
+                                                role="treeitem"><span
+                                                    class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-c fancytree-ico-cf"
+                                                    style="background-color:  rgb(222, 224, 226); border: 1px solid rgb(164, 176, 178);"
+                                                    tabindex="0"><span
+                                                    aria-label="Expand button at AMP level" class="fancytree-expander"
+                                                    id="amp-119727"
+                                                    role="button"></span><span class="fancytree-icon"
+                                                                               role="presentation"></span><span
+                                                    class="fancytree-title"
+                                                    style="white-space: normal; overflow: hidden; outline: none; background-color:  rgb(222, 224, 226);"><span
+                                                    class="nhsuk-u-visually-hidden" style="color: #0b0c0c">Wholesale indicator</span><strong
+                                                    class="nhsuk-tag nhsuk-u-margin-right-1"
+                                                    style="vertical-align: text-bottom; padding: 2px 4px; background-color: #606E80; border: 1px solid #212b32">W</strong><a
+                                                    class="tree-link" href="#" id="link--tree-amp-level-119727">Y62 : North West</a></span></span>
+
+                                                <ul aria-live="polite" aria-relevant="additions removals" role="group"
+                                                    style="">
+                                                    <li aria-expanded="false" aria-selected="false" role="treeitem">
+                                                                        <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-c fancytree-ico-cf"
+                                                                              style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                              tabindex="0"><span
+                                                                                aria-label="Expand button at AMP level"
+                                                                                class="fancytree-expander"
+                                                                                id="amp-1"
+                                                                                role="button"></span><span
+                                                                                class="fancytree-icon"
+                                                                                role="presentation"></span><span
+                                                                                class="fancytree-title"
+                                                                                style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                class="tree-link" href="#"
+                                                                                id="link--tree-amp-level-1">
+                                                                            QYG : Cheshire and merseyside   </a></span></span>
+
+                                                        <ul aria-live="polite" aria-relevant="additions removals"
+                                                            role="group"
+                                                            style="">
+
+                                                            <li aria-expanded="false" aria-selected="false"
+                                                                role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-c fancytree-ico-cf"
+                                                                                      style="background-color: rgb(222, 224, 226); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(222, 224, 226);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">01F00 [CCG] : Halton CCG </a></span></span>
+
+                                                                <ul aria-live="polite"
+                                                                    aria-relevant="additions removals" role="group"
+                                                                    style="">
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-c fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    N81011 [GPP] : Bevan group practice </a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">LP 930784 : Tseung MH</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander nurse-icon"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">99C2245E : O'Donnel M</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">954459 : Ryan JR</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    N81035 [GPP] : Appleton village surgery </a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">LP 910158 : Schofield CI</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">339853 : Stanley AC</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">344938 : Maher HL</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+
+
+                                                            <li aria-expanded="false" aria-selected="false"
+                                                                role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(222, 224, 226); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(222, 224, 226);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">01J00 [CCG] : Knowsley CCG</a></span></span>
+
+                                                                <ul aria-live="polite"
+                                                                    aria-relevant="additions removals" role="group"
+                                                                    style="">
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    N83015 [GPP] : Bluebell Lane Surgery </a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">LP 679409 : Maassarant F</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">05C0230E : Mills</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">76K0552E : Dhillon</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    N83018 [GPP] : Stockbridge Village HC</a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">LP 990246 : Barry P</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">345729 : Mckernan G</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">974970 : Berg D</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+
+
+                                                                </ul>
+
+
+                                                            </li>
+                                                            </li>
+
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+
+                                            <li aria-expanded="false" aria-selected="false"
+                                                role="treeitem"><span
+                                                    class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                    style="background-color:  rgb(222, 224, 226); border: 1px solid rgb(164, 176, 178);"
+                                                    tabindex="0"><span
+                                                    aria-label="Expand button at AMP level" class="fancytree-expander"
+                                                    id="amp-119727"
+                                                    role="button"></span><span class="fancytree-icon"
+                                                                               role="presentation"></span><span
+                                                    class="fancytree-title"
+                                                    style="white-space: normal; overflow: hidden; outline: none; background-color:  rgb(222, 224, 226);"><span
+                                                    class="nhsuk-u-visually-hidden" style="color: #0b0c0c">Wholesale indicator</span><a
+                                                    class="tree-link" href="#" id="link--tree-amp-level-119727">Y58 : South West</a></span><strong
+                                                    class="nhsuk-tag nhsuk-u-margin-right-1"
+                                                    style="vertical-align: middle; padding: 2px 4px; background-color: #606E80; border: 1px solid #212b32">HW</strong></span>
+
+                                                <ul aria-live="polite" aria-relevant="additions removals" role="group"
+                                                    style="">
+                                                    <li aria-expanded="false" aria-selected="false" role="treeitem">
+                                                                        <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                              style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                              tabindex="0"><span
+                                                                                aria-label="Expand button at AMP level"
+                                                                                class="fancytree-expander"
+                                                                                id="amp-1"
+                                                                                role="button"></span><span
+                                                                                class="fancytree-icon"
+                                                                                role="presentation"></span><span
+                                                                                class="fancytree-title"
+                                                                                style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                class="tree-link" href="#"
+                                                                                id="link--tree-amp-level-1">
+                                                                            QJK : Devon STP</a></span></span>
+
+                                                        <ul aria-live="polite" aria-relevant="additions removals"
+                                                            role="group"
+                                                            style="">
+
+                                                            <li aria-expanded="false" aria-selected="false"
+                                                                role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(222, 224, 226); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(222, 224, 226);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">RWV00 : Devon partnership NHS trust   </a></span></span>
+
+                                                                <ul aria-live="polite"
+                                                                    aria-relevant="additions removals" role="group"
+                                                                    style="">
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-c fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    RWVA1 : Torbay Drug service (P/C)  </a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">-24227 : Hospital Doctor</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+
+
+                                                                    <li aria-expanded="false" aria-selected="false"
+                                                                        role="treeitem">
+                                                                                <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lazy fancytree-exp-cd fancytree-ico-cf"
+                                                                                      style="background-color: rgb(245, 252, 255); border: 1px solid rgb(164, 176, 178);"
+                                                                                      tabindex="0"><span
+                                                                                        aria-label="Expand button at AMP level"
+                                                                                        class="fancytree-expander"
+                                                                                        id="amp-1"
+                                                                                        role="button"></span><span
+                                                                                        class="fancytree-icon"
+                                                                                        role="presentation"></span><span
+                                                                                        class="fancytree-title"
+                                                                                        style="white-space: normal; overflow: hidden; outline: none; background-color: rgb(245, 252, 255);"><a
+                                                                                        class="tree-link" href="#"
+                                                                                        id="link--tree-amp-level-1">
+                                                                                    RWVA2 : Torbay drug service (CJT) </a></span></span>
+
+                                                                        <ul aria-live="polite"
+                                                                            aria-relevant="additions removals"
+                                                                            role="group"
+                                                                            style="">
+
+                                                                            <li aria-selected="false"
+                                                                                role="treeitem"><span
+                                                                                    class="fancytree-node fancytree-exp-n fancytree-ico-c"
+                                                                                    tabindex="0"><span
+                                                                                    class="fancytree-expander"
+                                                                                    id="vmpp-3"></span><span
+                                                                                    class="fancytree-icon"
+                                                                                    role="presentation"></span><span
+                                                                                    class="fancytree-title"
+                                                                                    style="white-space: normal; overflow: hidden; outline: none;"><a
+                                                                                    aria-label="link to view 100 tablet"
+                                                                                    class="tree-link"
+                                                                                    href="#"
+                                                                                    id="link--tree-vmpp-level-3" "="">-24604 : Hospital Doctor</a>
+                                                                                <span
+                                                                                        class="nhsuk-u-visually-hidden"
+                                                                                        style="color: #0b0c0c">AMP currently viewing</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+
+
+                                                                </ul>
+
+
+                                                            </li>
+                                                            </li>
+
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p id="warning-hierarchy-js-disabled">No hierarchy tree available at this time</p>
+
+                </div>
+            </div>
+            <hr/>
+            <!--                Floating button-->
+            <!--                <a href="#drug-hierarchy-tree-container" tabindex="-1" title="Go to top">-->
+            <!--                    <button id="scrollToTopBtn" title="Go to top" type="button"><span class="nhsuk-u-visually-hidden">Navigate back to </span>Top-->
+            <!--                    </button>-->
+            <!--                </a>-->
+        </div>
+
+        <div class="nhsuk-grid-column-two-thirds col2">
+
+            <h1 id="organisation-type" class="nhsuk-heading-xl nhsuk-u-margin-bottom-3"></h1>
+            <h2 id="organisation-name" class="nhsuk-heading-l nhsuk-u-margin-bottom-3">NHSBSA</h2>
+            <h3 id="organisation-altcode" class="nhsuk-heading-m nhsuk-u-margin-bottom-5"></h3>
+
+
+            <div class="tabs tabbed">
+
+                <div class="tabs-nav">
+                    <ul class="tabs-list" role="tablist">
+                        <li class="tab" id="heading-tab-attributes" role="presentation"><a href="#tab-attributes"
+                                                                                           role="tab" id="tab1"
+                                                                                           aria-selected="true">Children</a>
+                        </li>
+                        <li class="tab" id="heading-tab-parents" role="presentation"><a href="#tab-parents" role="tab"
+                                                                                        id="tab4"
+                                                                                        tabindex="-1">Parents</a></li>
+                        <li class="tab" id="heading-tab-summary" role="presentation"><a href="#tab-summary" role="tab"
+                                                                                        id="tab2" tabindex="-1">Attributes</a>
+                        </li>
+                        <li class="tab" id="heading-tab-view-more" role="presentation"><a href="#tab-more" role="tab"
+                                                                                          id="tab3" tabindex="-1">Addresses</a>
+                        </li>
+                        <li class="tab" id="heading-tab-view-dates" role="presentation"><a href="#tab-dates" role="tab"
+                                                                                           id="tab5"
+                                                                                           tabindex="-1">Dates</a></li>
+                        <li class="tab" id="heading-tab-view-misc" role="presentation" style="display: none"><a
+                                href="#tab-misc" role="tab" id="tab6" tabindex="-1">Lead prescriber</a></li>
+
+                    </ul>
+
+                    <div id="show-history"
+                         class="nhsuk-action-link custom-nhsuk-action-link nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-0"
+                         style="float: right">
+                        <a href="../test/main/browse-settings" class="nhsuk-action-link__link">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <span class="nhsuk-action-link__text">Browse options</span>
+                        </a>
+                    </div>
+
+
+                    <div class="tabs-content">
+                        <!--tab1-->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-attributes" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab1">
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+
+                                        <!--Attributes-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="attributes-section">
+
+                                            <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab">Children</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Status
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Code and description
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Properties
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Start date
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            End date
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            View
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell"></td>
+                                                        <td class="nhsuk-table__cell">09E0151E: Turner</td>
+                                                        <td class="nhsuk-table__cell"></td>
+                                                        <td class="nhsuk-table__cell">18/09/2018</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell"><a href=""
+                                                                                         class="nhsuk-link--no-visited-state">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell"></td>
+                                                        <td class="nhsuk-table__cell">10A0188E: Mcclelland</td>
+                                                        <td class="nhsuk-table__cell"></td>
+                                                        <td class="nhsuk-table__cell">01/06/2021</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell"><a href=""
+                                                                                         class="nhsuk-link--no-visited-state">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell historic">
+                                                            <strong class="nhsuk-tag nhsuk-tag--orange">Historic</strong></td>
+
+                                                        <td>
+<!--                                                            <img-->
+<!--                                                                style="position:relative; left:-43px;"-->
+<!--                                                                src="https://raw.githubusercontent.com/nhsuk/nhsuk-frontend/8ca299a690b9ff1f5180f4858bf6f9253d671955/packages/assets/icons/icon-chevron-left.svg">-->
+                                                            -1806: Deputising services
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">
+                                                            POD
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">01/01/0001</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell"><a href=""
+                                                                                         class="nhsuk-link--no-visited-state">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="#" class="nhsuk-action-link__link" id="insert"
+                                                       data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Insert child</span>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+
+                                            <script type="text/javascript">
+                                                //<![CDATA[
+                                                filterInput = document.getElementById('insertAttribute-table--name-filter-input');
+                                                filterInput.onkeyup = (e) => {
+                                                    const rows = document.querySelectorAll('tbody.nhsuk-table__body > tr.nhsuk-table__row');
+                                                    rows.forEach((row) => {
+                                                        const heading = row.querySelector('td:nth-child(2) > span:nth-child(2)');
+                                                        if (heading.textContent.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+                                                            row.classList.remove('nhsuk-table__row__filtered');
+                                                        } else {
+                                                            row.classList.add('nhsuk-table__row__filtered');
+                                                        }
+                                                    });
+                                                }
+
+                                                const nameHeader = document.getElementById('insertAttribute-table--name-header-span');
+                                                nameHeader.addEventListener('click', () => {
+                                                    const visible = filterInput.classList.contains(
+                                                        'insertAttribute-table--name-filter-input-visible');
+                                                    if ( visible ) {
+                                                        filterInput.classList.remove('insertAttribute-table--name-filter-input-visible')
+                                                        filterInput.classList.add('insertAttribute-table--name-filter-input-hidden')
+                                                    } else {
+                                                        filterInput.classList.add('insertAttribute-table--name-filter-input-visible')
+                                                        filterInput.classList.remove('insertAttribute-table--name-filter-input-hidden')
+                                                    }
+                                                });
+                                                //]]>
+
+                                            </script>
+                                        </section>
+
+                                        <br>
+                                        <div class="grid-row" data-browse-user>
+                                            <div class="column-two-thirds">
+                                                <a class="nhsuk-button" type="submit "
+                                                   href="../test/main/bulkmove-date-page">
+                                                    Create bulk move
+                                                </a>
+                                                <a class="nhsuk-button" type="submit "
+                                                   href="../test/main/budget-financial-start-date">
+                                                    Pescribing budgets
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--tab4-->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-parents" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab4" hidden>
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-action-link custom-nhsuk-action-link nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"
+                                     style="float: right; display: none">
+                                    <a href="update/insert-attribute.html" class="nhsuk-action-link__link"
+                                       id="add-practice">
+                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                             width="36" height="36">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                        </svg>
+                                        <span class="nhsuk-action-link__text">Add practice</span>
+                                    </a>
+                                </div>
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <!--Summary-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="parents-section">
+
+                                            <div id="parent-card" class="hide-card">
+                                                <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+                                                    <h2 class="nhsuk-table__heading-tab">Parents</h2>
+                                                    <table class="nhsuk-table">
+                                                        <thead role="rowgroup" class="nhsuk-table__head">
+                                                        <tr role="row" class="nhsuk-table__row">
+                                                            <th role="columnheader" scope="col">Description</th>
+                                                            <th role="columnheader" scope="col">Start date</th>
+                                                            <th role="columnheader" scope="col">End date</th>
+                                                            <th role="columnheader" scope="col">View</th>
+                                                            <th role="columnheader" scope="col" data-browse-user>
+                                                                Remove
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody class="nhsuk-table__body">
+                                                        <tr role="row" class="nhsuk-table__row" data-browse-user>
+                                                            <td class="nhsuk-table__cell">Div03: Newcastle division</td>
+                                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                                            <td class="nhsuk-table__cell">31/12/2009</td>
+                                                            <td class="nhsuk-table__cell"><a href="#"
+                                                                                             class="nhsuk-link--no-visited-state">View</a>
+                                                            </td>
+                                                            <td class="nhsuk-table__cell" data-browse-user><a href="#"
+                                                                                                              class="nhsuk-link--no-visited-state">Remove</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr role="row" class="nhsuk-table__row">
+                                                            <td class="nhsuk-table__cell">Div14: North West division
+                                                            </td>
+                                                            <td class="nhsuk-table__cell">01/01/2010</td>
+                                                            <td class="nhsuk-table__cell">31/12/9999</td>
+                                                            <td class="nhsuk-table__cell"><a href="#"
+                                                                                             class="nhsuk-link--no-visited-state">View</a>
+                                                            </td>
+                                                            <td class="nhsuk-table__cell" data-browse-user></td>
+                                                        </tr>
+                                                        <tr role="row" class="nhsuk-table__row">
+                                                            <td class="nhsuk-table__cell">QVC</td>
+                                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                                            <td class="nhsuk-table__cell">30/09/2002</td>
+                                                            <td class="nhsuk-table__cell"><a href="#"
+                                                                                             class="nhsuk-link--no-visited-state">View</a>
+                                                            </td>
+                                                            <td class="nhsuk-table__cell" data-browse-user></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="nhsuk-action-link"
+                                                         style="margin-top: 30px; display: inline-block; width: 100%">
+                                                        <a href="update/insert-relationship-additional"
+                                                           class="nhsuk-action-link__link" data-browse-user>
+                                                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                 aria-hidden="true" width="36" height="36">
+                                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                            </svg>
+                                                            <span class="nhsuk-action-link__text">Insert parent</span>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="gp-card" class="hide-card">
+                                <!--                            <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">-->
+                                <!--                                <table class="nhsuk-table">-->
+                                <!--                                    <h2 class="nhsuk-table__heading-tab" id="GP Practice">GP practice / Cost centre - C84661</h2>-->
+                                <!--                                    <thead class="nhsuk-table__head">-->
+                                <!--                                    <tr class="nhsuk-table__row">-->
+                                <!--&lt;!&ndash;                                        <th>Value</th>&ndash;&gt;-->
+                                <!--                                        <th>Main code</th>-->
+                                <!--                                        <th>Start date</th>-->
+                                <!--                                        <th>End date</th>-->
+                                <!--                                        <th>Status</th>-->
+                                <!--                                        <th>Removed</th>-->
+                                <!--                                        <th>View / Change</th>-->
+
+                                <!--                                    </tr>-->
+                                <!--                                    </thead>-->
+                                <!--                                    <tbody class="nhsuk-table__body">-->
+                                <!--                                    <tr class="nhsuk-table__row">-->
+                                <!--&lt;!&ndash;                                        <td class="nhsuk-table__cell"></td>&ndash;&gt;-->
+                                <!--                                        <td class="nhsuk-table__cell">C84661</td>-->
+                                <!--                                        <td class="nhsuk-table__cell">01/01/0001</td>-->
+                                <!--                                        <td class="nhsuk-table__cell">31/12/2009</td>-->
+                                <!--                                        <td class="nhsuk-table__cell">A</td>-->
+                                <!--                                        <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state"></a></td>-->
+                                <!--                                        <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state">View / Change</a></td>-->
+
+                                <!--                                    </tr>-->
+                                <!--                                    </tbody>-->
+                                <!--                                </table>-->
+
+                                <!--                                <strong class="nhsuk-tag nhsuk-tag&#45;&#45;blue nhsuk-u-margin-top-3 nhsuk-u-padding-2 nhsuk-u-font-size-19">-->
+                                <!--                                    Properties-->
+                                <!--                                </strong>-->
+
+                                <!--                                <table class="nhsuk-table nhsuk-u-margin-top-3"  >-->
+                                <!--                                    <thead class="nhsuk-table__head">-->
+                                <!--                                    <tr class="nhsuk-table__row">-->
+                                <!--                                        <th>Value</th>-->
+                                <!--                                        <th>Start Date</th>-->
+                                <!--                                        <th>End Date</th>-->
+                                <!--                                        <th>Removed</th>-->
+                                <!--                                    </tr>-->
+                                <!--                                    </thead>-->
+                                <!--                                    <tbody class="nhsuk-table__body">-->
+                                <!--                                    <tr class="nhsuk-table__row">-->
+                                <!--                                        <td class="nhsuk-table__cell">Prescribing only doctor indicator</td>-->
+                                <!--                                        <td class="nhsuk-table__cell">01/06/2022</td>-->
+                                <!--                                        <td class="nhsuk-table__cell">31/12/9999</td>-->
+                                <!--                                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state"></a></td>-->
+                                <!--                                    </tr>-->
+                                <!--                                    </tbody>-->
+                                <!--                                </table>-->
+
+                                <!--                                <div class="nhsuk-action-link" style="margin-top: 30px; display: inline-block; width: 100%">-->
+                                <!--                                    <a href="update/insert-attribute.html" class="nhsuk-action-link__link">-->
+                                <!--                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">-->
+                                <!--                                            <path d="M0 0h24v24H0z" fill="none"></path>-->
+                                <!--                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>-->
+                                <!--                                        </svg>-->
+                                <!--                                        <span class="nhsuk-action-link__text">Add property</span>-->
+                                <!--                                    </a>-->
+                                <!--                                </div>-->
+                                <!--                            </div>-->
+                                <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">
+                                    <table class="nhsuk-table">
+                                        <h2 class="nhsuk-table__heading-tab" id="GP Practice">GP practice / Cost
+                                            centre</h2>
+                                        <thead class="nhsuk-table__head">
+                                        <tr class="nhsuk-table__row">
+                                            <!--                                        <th>Value</th>-->
+                                            <th>Main code</th>
+                                            <th>Start date</th>
+                                            <th>End date</th>
+                                            <th>Status</th>
+                                            <th>Removed</th>
+                                            <th data-browse-user>View</th>
+                                            <th data-browse-user>Edit</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row">
+                                            <!--                                        <td class="nhsuk-table__cell"></td>-->
+                                            <td class="nhsuk-table__cell">N81645</td>
+                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                            <td class="nhsuk-table__cell">31/12/2009</td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state">View</a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state">Edit</a>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-3 nhsuk-u-padding-2 nhsuk-u-font-size-19">
+                                        Properties
+                                    </strong>
+
+                                    <table class="nhsuk-table nhsuk-u-margin-top-3">
+                                        <thead class="nhsuk-table__head">
+                                        <tr class="nhsuk-table__row">
+                                            <th>Value</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Removed</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row">
+                                            <td class="nhsuk-table__cell">Prescribing only doctor indicator</td>
+                                            <td class="nhsuk-table__cell">01/06/2022</td>
+                                            <td class="nhsuk-table__cell">31/12/9999</td>
+                                            <td class="nhsuk-table__cell"><a href="#"
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row">
+                                            <td class="nhsuk-table__cell">Lead prescriber</td>
+                                            <td class="nhsuk-table__cell">01/06/2022</td>
+                                            <td class="nhsuk-table__cell">31/12/9999</td>
+                                            <td class="nhsuk-table__cell"><a href="#"
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="nhsuk-action-link"
+                                         style="margin-top: 30px; display: inline-block; width: 100%">
+                                        <a href="update/insert-attribute.html" class="nhsuk-action-link__link"
+                                           data-browse-user="">
+                                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                 aria-hidden="true" width="36" height="36">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                            </svg>
+                                            <span class="nhsuk-action-link__text">Add property</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="nurse-card" class="hide-card">
+                                <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">
+                                    <table class="nhsuk-table">
+                                        <h2 class="nhsuk-table__heading-tab" id="GP Practice">Parents</h2>
+                                        <thead class="nhsuk-table__head">
+                                        <tr class="nhsuk-table__row">
+                                            <th>Type</th>
+                                            <th>Main code</th>
+                                            <th>Start date</th>
+                                            <th>End date</th>
+                                            <th>Status</th>
+                                            <th>Removed</th>
+                                            <th data-browse-user>Edit</th>
+                                            <th data-browse-user>Remove</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="nhsuk-table__body">
+                                        <tr class="nhsuk-table__row">
+                                            <td class="nhsuk-table__cell">GP Practice / Cost Centre</td>
+                                            <td class="nhsuk-table__cell">N81072</td>
+                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                            <td class="nhsuk-table__cell">31/12/2009</td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row">
+                                            <td class="nhsuk-table__cell">GP Practice / Cost Centre</td>
+                                            <td class="nhsuk-table__cell">TP1072</td>
+                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                            <td class="nhsuk-table__cell">31/12/2009</td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state">Remove</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="nhsuk-table__row">
+                                            <td class="nhsuk-table__cell">Commissioner or provider in England</td>
+                                            <td class="nhsuk-table__cell">5J100</td>
+                                            <td class="nhsuk-table__cell">01/01/0001</td>
+                                            <td class="nhsuk-table__cell">31/12/2009</td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell"><a href=""
+                                                                             class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state"></a>
+                                            </td>
+                                            <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                              class="nhsuk-link--no-visited-state">Remove</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="nhsuk-action-link"
+                                         style="margin-top: 30px; display: inline-block; width: 100%">
+                                        <a href="update/insert-relationship-additional.html
+" class="nhsuk-action-link__link"
+                                           data-browse-user>
+                                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                 aria-hidden="true" width="36" height="36">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                            </svg>
+                                            <span class="nhsuk-action-link__text">Insert parent link</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--                                <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive " >-->
+                                <!--                                    <table class="nhsuk-table">-->
+                                <!--                                        <h2 class="nhsuk-table__heading-tab" id="GP Practice">Commissioner or provider in England</h2>-->
+                                <!--                                        <thead class="nhsuk-table__head">-->
+                                <!--                                        <tr class="nhsuk-table__row">-->
+                                <!--                                            <th>Main code</th>-->
+                                <!--                                            <th>Start date</th>-->
+                                <!--                                            <th>End date</th>-->
+                                <!--                                            <th>Status</th>-->
+                                <!--                                            <th>Removed</th>-->
+                                <!--                                            <th>Edit</th>-->
+                                <!--                                            <th>Remove</th>-->
+                                <!--                                        </tr>-->
+                                <!--                                        </thead>-->
+                                <!--                                        <tbody class="nhsuk-table__body">-->
+                                <!--                                        <tr class="nhsuk-table__row">-->
+                                <!--                                            <td class="nhsuk-table__cell">Commissioner or provider in England</td>&ndash;&gt;-->
+                                <!--                                            <td class="nhsuk-table__cell">5J100</td>-->
+                                <!--                                            <td class="nhsuk-table__cell">01/01/0001</td>-->
+                                <!--                                            <td class="nhsuk-table__cell">31/12/2009</td>-->
+                                <!--                                            <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state"></a></td>-->
+                                <!--                                            <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state"></a></td>-->
+                                <!--                                            <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state"></a></td>-->
+                                <!--                                            <td class="nhsuk-table__cell"><a href="" class="nhsuk-link&#45;&#45;no-visited-state">Remove</a></td>-->
+                                <!--                                        </tr>-->
+                                <!--                                        </tbody>-->
+                                <!--                                    </table>-->
+
+
+                                <!--                                    <div class="nhsuk-action-link" style="margin-top: 30px; display: inline-block; width: 100%">-->
+                                <!--                                        <a href="update/insert-attribute.html" class="nhsuk-action-link__link">-->
+                                <!--                                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">-->
+                                <!--                                                <path d="M0 0h24v24H0z" fill="none"></path>-->
+                                <!--                                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>-->
+                                <!--                                            </svg>-->
+                                <!--                                            <span class="nhsuk-action-link__text">Add Commissioner or provider in England</span>-->
+                                <!--                                        </a>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                            </div>
+
+
+                        </div>
+
+
+                        <!--tab2-->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-summary" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab2" hidden>
+
+                            <div class="nhsuk-action-link custom-nhsuk-action-link nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-0"
+                                 style="float: right">
+                                <a href="update/insert-attribute.html" class="nhsuk-action-link__link" data-browse-user>
+                                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
+                                         width="36" height="36">
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                    </svg>
+                                    <span class="nhsuk-action-link__text">Add attribute</span>
+                                </a>
+                            </div>
+
+
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <!--Summary-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="summary-section">
+
+
+                                            <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab" id="GP Practice">GP practice /
+                                                        Cost centre type</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th>Value</th>
+                                                        <th>Start date</th>
+                                                        <th>End date</th>
+                                                        <th data-browse-user>Edit</th>
+                                                        <th data-browse-user>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">GP practice</td>
+                                                        <td class="nhsuk-table__cell">01/06/2022</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state">Edit</a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state">Remove</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">Other</td>
+                                                        <td class="nhsuk-table__cell">01/01/0001</td>
+                                                        <td class="nhsuk-table__cell">31/05/2022</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-top-3 nhsuk-u-padding-2 nhsuk-u-font-size-19">
+                                                    GMS/PMS/APMS Type
+                                                </strong>
+
+
+                                                <table class="nhsuk-table nhsuk-u-margin-top-3">
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th>Value</th>
+                                                        <th>Start Date</th>
+                                                        <th>End Date</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">Personal medical services</td>
+                                                        <td class="nhsuk-table__cell">01/06/2022</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="update/insert-attribute.html"
+                                                       class="nhsuk-action-link__link" data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Add GP practice / Cost centre type</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <a class="nhsuk-back-to-top__link" href="#links">
+                                                <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z">
+                                                    </path>
+                                                </svg>
+                                                Back to top</a>
+
+                                            <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab" id="GP Practice Indicator">GP
+                                                        practice indicator</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th>Value</th>
+                                                        <th>Start date</th>
+                                                        <th>End date</th>
+                                                        <th data-browse-user>Edit</th>
+                                                        <th data-browse-user>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">GP practice</td>
+                                                        <td class="nhsuk-table__cell">01/04/1998</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="update/insert-attribute-preselected-gpi.html"
+                                                       class="nhsuk-action-link__link" data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Add GP practice indicator</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <a class="nhsuk-back-to-top__link" href="#links">
+                                                <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z">
+                                                    </path>
+                                                </svg>
+                                                Back to top</a>
+
+                                            <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive ">
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab" id="Payment Machine Code">
+                                                        Payment machine code</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th>Status</th>
+                                                        <th>Value</th>
+                                                        <th>Start date</th>
+                                                        <th>End date</th>
+                                                        <th data-browse-user>Edit</th>
+                                                        <th data-browse-user>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell future-dated">
+                                                            <strong class="nhsuk-tag nhsuk-tag--green"> Future</strong></td>
+                                                        <td class="nhsuk-table__cell future-dated">
+
+<!--                                                            <img style="position:relative;left: -42px;"-->
+<!--                                                                 src="https://raw.githubusercontent.com/nhsuk/nhsuk-frontend/8ca299a690b9ff1f5180f4858bf6f9253d671955/packages/assets/icons/icon-chevron-right.svg">-->
+
+                                                            TPM
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">01/10/2030</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell present-day">
+                                                            <strong class="nhsuk-tag nhsuk-tag--white">Present</strong></td>
+                                                        <td class="nhsuk-table__cell future-dated">
+                                                            SHK
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">01/10/2006</td>
+                                                        <td class="nhsuk-table__cell">31/12/2030</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+
+
+                                                        <td class="nhsuk-table__cell historic">
+                                                            <strong class="nhsuk-tag nhsuk-tag--orange">Historic</strong></td>
+                                                        <td class="nhsuk-table__cell future-dated">
+<!--                                                            <img-->
+<!--                                                                style="position:relative; left:-43px;"-->
+<!--                                                                src="https://raw.githubusercontent.com/nhsuk/nhsuk-frontend/8ca299a690b9ff1f5180f4858bf6f9253d671955/packages/assets/icons/icon-chevron-left.svg">-->
+                                                            CHS
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">01/01/0001</td>
+                                                        <td class="nhsuk-table__cell">30/09/2006</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"></a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="update/insert-attribute-preselected-pmc"
+                                                       class="nhsuk-action-link__link" data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Add payment machine code</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <a class="nhsuk-back-to-top__link" href="#links">
+                                                <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z">
+                                                    </path>
+                                                </svg>
+                                                Back to top</a>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--tab3-->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-more" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab3" hidden>
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <!--Names-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="name-section">
+
+                                            <div class="nhsuk-action-link" style="float: right">
+                                            </div>
+
+
+                                            <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab">Addresses</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th>Address</th>
+                                                        <th>Start date</th>
+                                                        <th>End date</th>
+                                                        <th data-browse-user>Edit</th>
+                                                        <th data-browse-user>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell"><p>STELLA HOUSE<br>
+                                                            NEWBURN RIVERSIDE<br>
+                                                            NEWCASTLE UPON TYNE<br>
+                                                            NE15 8NY</p>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell">01/04/1998</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"
+                                                                                                          data-address></a>
+                                                        </td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state"
+                                                                                                          data-address></a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="update/insert-address.html" class="nhsuk-action-link__link"
+                                                       data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Add address</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </section>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- tab4 -->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-dates" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab3" hidden>
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <!--Names-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="name-section">
+
+
+                                            <div class="nhsuk-form-group">
+                                                <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom"
+                                                          aria-describedby="example-hint" role="group">
+                                                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                                        Start date
+                                                    </legend>
+                                                    <div class="nhsuk-hint" id="example-hint">
+                                                        For example, 15 3 1984
+                                                    </div>
+
+                                                    <div class="nhsuk-date-input" id="example">
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-day">
+                                                                    Day
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                       id="example-day"
+                                                                       name="example-day" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="1">1</input>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-month">
+                                                                    Month
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                       id="example-month"
+                                                                       name="example-month" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="1">1</input>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-year">
+                                                                    Year
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                       id="example-year"
+                                                                       name="example-year" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="2000">2000</input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-top-5">
+                                                        End date
+                                                    </legend>
+                                                    <div class="nhsuk-hint" id="example-hint">
+                                                        For example, 15 3 1984
+                                                    </div>
+
+                                                    <div class="nhsuk-date-input" id="example">
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-day">
+                                                                    Day
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                       id="example-day"
+                                                                       name="example-day" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="31">
+                                                            </div>
+                                                        </div>
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-month">
+                                                                    Month
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                                                                       id="example-month"
+                                                                       name="example-month" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="12">
+                                                            </div>
+                                                        </div>
+                                                        <div class="nhsuk-date-input__item">
+                                                            <div class="nhsuk-form-group">
+                                                                <label class="nhsuk-label nhsuk-date-input__label"
+                                                                       for="example-year">
+                                                                    Year
+                                                                </label>
+                                                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                                                                       id="example-year"
+                                                                       name="example-year" type="text" pattern="[0-9]*"
+                                                                       inputmode="numeric" value="2022">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+
+                                            </div>
+                                            <div class="grid-row">
+                                                <div class="column-two-thirds">
+                                                    <a class="nhsuk-button nhsuk-u-margin-top-4" type="submit "
+                                                       href="#" data-browse-user="">
+                                                        Save
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </section>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--tab5-->
+                        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-misc" role="tabpanel" tabindex="-1"
+                             aria-labelledby="tab1" hidden>
+                            <div class="tabs-panel-inner">
+                                <div class="nhsuk-grid-row">
+                                    <div class="nhsuk-grid-column-full">
+                                        <!--Attributes-->
+                                        <section class="nhsuk-u-padding-bottom-4" id="misc-section">
+
+
+                                            <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+                                                <table class="nhsuk-table">
+                                                    <h2 class="nhsuk-table__heading-tab">Lead prescriber</h2>
+                                                    <thead class="nhsuk-table__head">
+                                                    <tr class="nhsuk-table__row">
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            PD code
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Name
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Date effective
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col">
+                                                            Date inactive
+                                                        </th>
+                                                        <th role="columnheader" class="nhsuk-table__header" scope="col"
+                                                            data-browse-user>Terminate
+                                                        </th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="nhsuk-table__body">
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">530755</td>
+                                                        <td class="nhsuk-table__cell">TSHEAU MH</td>
+                                                        <td class="nhsuk-table__cell">16/05/2016</td>
+                                                        <td class="nhsuk-table__cell">31/12/9999</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user><a href=""
+                                                                                                          class="nhsuk-link--no-visited-state">Terminate</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">10A0188</td>
+                                                        <td class="nhsuk-table__cell">Martin NL</td>
+                                                        <td class="nhsuk-table__cell">01/06/2021</td>
+                                                        <td class="nhsuk-table__cell">31/12/2016</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                    </tr>
+                                                    <tr class="nhsuk-table__row">
+                                                        <td class="nhsuk-table__cell">180625</td>
+                                                        <td class="nhsuk-table__cell">Mchlong SJ</td>
+                                                        <td class="nhsuk-table__cell">01/07/1997</td>
+                                                        <td class="nhsuk-table__cell">3/09/2006</td>
+                                                        <td class="nhsuk-table__cell" data-browse-user></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="nhsuk-action-link"
+                                                     style="margin-top: 30px; display: inline-block; width: 100%">
+                                                    <a href="update/lp/lp-details" class="nhsuk-action-link__link"
+                                                       id="lead-practioner" data-browse-user>
+                                                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                             aria-hidden="true" width="36" height="36">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                                                        </svg>
+                                                        <span class="nhsuk-action-link__text">Set prescriber</span>
+                                                    </a>
+                                                </div>
+
+
+                                            </div>
+                                            <script type="text/javascript">
+                                            //<![CDATA[
+                                            filterInput = document.getElementById('insertAttribute-table--name-filter-input');
+                                            filterInput.onkeyup = (e) => {
+                                                const rows = document.querySelectorAll('tbody.nhsuk-table__body > tr.nhsuk-table__row');
+                                                rows.forEach((row) => {
+                                                    const heading = row.querySelector('td:nth-child(2) > span:nth-child(2)');
+                                                    if (heading.textContent.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
+                                                        row.classList.remove('nhsuk-table__row__filtered');
+                                                    } else {
+                                                        row.classList.add('nhsuk-table__row__filtered');
+                                                    }
+                                                });
+                                            }
+
+                                            const nameHeader = document.getElementById('insertAttribute-table--name-header-span');
+                                            nameHeader.addEventListener('click', () => {
+                                                const visible = filterInput.classList.contains(
+                                                    'insertAttribute-table--name-filter-input-visible');
+                                                if ( visible ) {
+                                                    filterInput.classList.remove('insertAttribute-table--name-filter-input-visible')
+                                                    filterInput.classList.add('insertAttribute-table--name-filter-input-hidden')
+                                                } else {
+                                                    filterInput.classList.add('insertAttribute-table--name-filter-input-visible')
+                                                    filterInput.classList.remove('insertAttribute-table--name-filter-input-hidden')
+                                                }
+                                            });
+                                            //]]>
+
+                                            </script>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled'
+        : 'js-enabled');
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    // <![CDATA[
+    const jsWarning = document.getElementById("warning-hierarchy-js-disabled");
+    jsWarning.style.display = "none";
+
+    const jsButtonWarning = document.getElementById("warning-buttons-js-disabled");
+    jsButtonWarning.style.display = "block";
+
+    //Get the button
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    scrollToTopBtn.classList.add("hideBtn")
+    var rootElement = document.documentElement
+
+    var x = window.matchMedia("(min-width: 769px)")
+
+    function handleScroll() {
+        // Do something on scroll
+        if (rootElement.scrollTop > 500 && x.matches) {
+            // Show button
+            scrollToTopBtn.classList.remove("hideBtn")
+            scrollToTopBtn.classList.add("showBtn")
+        } else {
+            // Hide button
+            scrollToTopBtn.classList.remove("showBtn")
+            scrollToTopBtn.classList.add("hideBtn")
+        }
+    }
+
+    document.addEventListener("scroll", handleScroll)
+
+
+    let link = document.getElementsByClassName("tree-link");
+    addEventListener('keypress', function () {
+        if (link.keyCode === 13) {
+            link.click();
+        }
+    })
+
+    // ]]>
+
+</script>
+
+
+<!--<script src="/common-drug-reference/js/application.js"></script>-->
+<!--<script src="/common-drug-reference/js/select2.js"></script>-->
+
+<script src="../../public/js/application.js"></script>
+<script src="../../public/js/select2.js"></script>
+
+
+<script>
+    window.GOVUKFrontend.initAll();
+
+</script>
+
+
+<!--Collapse nodes on startup-->
+<script>
+   window.addEventListener("DOMContentLoaded", (event) => {
+       console.log("loaded");
+
+       const expanderElements = document.querySelectorAll(".fancytree-expander");
+
+       expanderElements.forEach(element => {
+           console.dir(element.parentElement.parentElement);
+           const parent = element.parentElement.parentElement;
+           const childULs = parent.querySelectorAll('ul');
+
+           childULs.forEach(element => {
+               console.log(element);
+
+               if (element.style.display == "none" || element.style.display == null) {
+                   element.style.display = "block"
+               } else {
+                   element.style.display = "none"
+               }
+           });
+
+       })
+
+
+   });
+
+</script>
+
+<script>
+    const expanderElements = document.querySelectorAll(".fancytree-expander");
+
+    console.log(expanderElements);
+
+    expanderElements.forEach(element => element.addEventListener("click", (event) => {
+        console.dir(event.target.parentElement.parentElement);
+        const parent = event.target.parentElement.parentElement;
+
+        const childULs = parent.querySelectorAll('ul');
+
+        //change icon
+        const iconElement = parent.children[0];
+        if(iconElement.classList.contains("fancytree-exp-c")) {
+            iconElement.classList.remove("fancytree-exp-c");
+            iconElement.classList.add("fancytree-exp-e");
+        } else {
+            iconElement.classList.remove("fancytree-exp-e");
+            iconElement.classList.add("fancytree-exp-c");
+        }
+
+        childULs.forEach(element => {
+
+            if(element.style.display=="none") {
+                element.style.display = "block";
+            }else{
+                element.style.display = "none";
+
+
+            }
+        });
+
+
+
+    }))
+
+</script>
+
+
+<script src="../../public/js/tabs.js"></script>
+
+<script>
+
+
+
+    const data = {
+        "NHSBSA" : {type:"", altcode:""},
+        "England" : {type:"Country", altcode:""},
+        "North West" : {type:"Regional Office of the NHS executive", altcode:"Y62"},
+        "South West" : {type:"Regional Office of the NHS executive", altcode:"Y58"},
+        "Cheshire and merseyside" : {type:"STP", altcode:"QYG"},
+        "Halton CCG" : {type:"Commissioner or provider in England", altcode:"01f00 [CCG]"},
+        "Knowsley CCG" : {type:"Commissioner or provider in England", altcode:"01J00 [CCG]"},
+        "Bevan group practice" : {type:"GP Practice / Cost Centre", altcode:"N81011 [GPP]"},
+        "Appleton village surgery" : {type:"GP Practice / Cost Centre", altcode:"N81035 [GPP]"},
+        "Tseung MH" : {type:"General Practitioner", altcode:"LP 930784"},
+        "O'Donnel M" : {type:"Nurse", altcode:"99C2245E"},
+        "Ryan JR" : {type:"General Practitioner", altcode:"954459"},
+        "Schofield CI" : {type:"GP Practice / Cost Centre", altcode:"LP 910158"},
+        "Stanley AC" : {type:"General Practitioner", altcode:"339853"},
+        "Maher HL" : {type:"General Practitioner", altcode:"344938"},
+        "Devon" : {type:"STP", altcode:"QJK"},
+        "Devon Partnership NHS trust" : {type:"Hospital Trust", altcode:"RWV00"},
+        "Torbay Drug service (P/C)" : {type:"Hospital", altcode:"RWVA1"},
+        "Torbay Drug service (CJT)" : {type:"Hospital", altcode:"RWVA2"},
+        "Hospital Doctor" : {type:"Hospital Doctor", altcode:"-24604"},
+        "Bluebell Lane Surgery" : {type:"GP Practice / Cost Centre", altcode:"N83015 [GPP]"},
+         "Stockbridge Village HC": {type:"GP Practice / Cost Centre", altcode:"N83018 [GPP]"},
+        "Maassarant F" : {type:"General Practitioner", altcode:"LP 679409"},
+        "Mills" : {type:"General Practitioner", altcode:"05C0230E"},
+        "Dhillon" : {type:"General Practitioner", altcode:"76K0552E"},
+        "Barry P" : {type:"General Practitioner", altcode:"LP 990246"},
+        "Mckernan G" : {type:"General Practitioner", altcode:"345729"},
+        "Berg D" : {type:"General Practitioner", altcode:"974970"},
+
+    }
+
+
+    const root = document.querySelector('#ui-id-2');
+
+    const aTags = root.querySelectorAll("a");
+
+
+    aTags.forEach(node => {
+        node.addEventListener("click", (event) => {
+            const node = event.currentTarget;
+
+            //clear viewing tag
+            const viewingSpan = document.querySelector('#viewing');
+            //clear link
+            const link = document.querySelector('#insert')
+            link.href="#";
+
+            if(viewingSpan){
+                viewingSpan.remove();
+            }
+
+            node.insertAdjacentHTML("afterend", `
+            <strong id="viewing" class="nhsuk-tag nhsuk-u-margin-right-1 nhsuk-u-margin-left-4" style="vertical-align: text-bottom; padding: 3px; float: right">Viewing</strong>
+            `);
+
+            const heading = document.querySelector("#organisation-name");
+            heading.textContent = node.text.substring(node.text.indexOf(':')+1).trim();
+
+            const altcode = document.querySelector("#organisation-altcode");
+            const organisationType = document.querySelector("#organisation-type");
+            if(heading.textContent !== "NHSBSA") {
+                organisationType.textContent = data[heading.textContent.trim()].type + " details";
+                altcode.textContent = data[heading.textContent]?.altcode;
+            }else {
+                organisationType.textContent = "";
+                altcode.textContent = data[heading.textContent].altcode = "";
+            }
+
+
+            //show/hide lead prescriber tab
+            const id = document.querySelector('#heading-tab-view-misc');
+            if(organisationType.textContent == "GP Practice / Cost Centre details") {
+                id.style.display = "block";
+            }
+            else {
+                id.style.display = "none";
+            }
+
+            const headingForNextPage =  organisationType.textContent == "GP Practice / Cost Centre details" ? 'prescriber dispenser' : 'organisational unit'
+
+            //update link to pass type to next page
+            if(organisationType.textContent != "") {
+                link.href = `insert/insert-type?type=${organisationType.textContent}&parent=${heading.textContent}&heading=${headingForNextPage}`;
+            }
+
+
+            //setup parent tab cards
+            let orgname = document.querySelector("#organisation-name");
+            orgname = orgname.textContent;
+
+            const orgType = data[orgname].type;
+
+            const parentsCardArr = ["Country","Regional Office of the NHS executive","Commissioner or provider in England","GP Practice / Cost Centre"];
+
+            const parentCard = document.querySelector('#parent-card');
+            const gpCard = document.querySelector('#gp-card');
+            const nurseCard = document.querySelector('#nurse-card');
+            const addPractice = document.querySelector('#add-practice');
+
+            console.log(addPractice);
+
+            if(parentsCardArr.includes(orgType)){
+                //show parent
+                if(parentCard.classList.contains('hide-card')){
+                    parentCard.classList.remove('hide-card');
+                }
+                //hide GP
+                if(!gpCard.classList.contains('hide-card')){
+                    gpCard.classList.add('hide-card');
+                }
+                //hide nurse
+                if(!nurseCard.classList.contains('hide-card')){
+                    nurseCard.classList.add('hide-card');
+                }
+
+                //dont show add practice link
+                if(!addPractice.classList.contains('hide-card')){
+                    addPractice.classList.add('hide-card');F
+                }
+
+
+            } else if(orgType == 'General Practitioner'){
+
+                //show GP
+                if(gpCard.classList.contains('hide-card')){
+                    gpCard.classList.remove('hide-card');
+                }
+
+                // hide parent
+                if(!parentCard.classList.contains('hide-card')){
+                    parentCard.classList.add('hide-card');
+                }
+
+                // hide nurse
+                if(!nurseCard.classList.contains('hide-card')){
+                    nurseCard.classList.add('hide-card');
+                }
+
+
+                //dont show add practice link
+                if(!addPractice.classList.contains('hide-card')){
+                    addPractice.classList.add('hide-card');
+                }
+
+            } else if(orgType == 'Nurse'){
+
+                //show Nurse
+                if(nurseCard.classList.contains('hide-card')){
+                    nurseCard.classList.remove('hide-card');
+                }
+
+                // hide parent
+                if(!parentCard.classList.contains('hide-card')){
+                    parentCard.classList.add('hide-card');
+                }
+
+                // hide GP
+                if(!gpCard.classList.contains('hide-card')){
+                    gpCard.classList.add('hide-card');
+                }
+
+                //show add practice link
+                if(addPractice.classList.contains('hide-card')){
+                    addPractice.classList.remove('hide-card');
+                }
+
+            }
+
+            if(orgType == 'General Practitioner' || orgType == 'Nurse') {
+                console.log("Children tab needs to be removed");
+
+                const childrenTab = document.querySelector('#heading-tab-attributes');
+                childrenTab.setAttribute('hidden', 'true');
+
+
+                const childrenData = document.querySelector('#tab-attributes');
+                childrenData.setAttribute('hidden', 'true');
+
+                childrenTab.querySelector('a').removeAttribute('aria-selected');
+
+                const parentsTab = document.querySelector('#heading-tab-parents');
+                parentsTab.removeAttribute('hidden');
+                parentsTab.querySelector('a').setAttribute('aria-selected', 'true');
+
+                const parentsData =  document.querySelector('#tab-parents');
+                parentsData.removeAttribute('hidden');
+
+
+            }else {
+
+
+                const ariaTab = document.querySelector('a[aria-selected=true]');
+                ariaTab.removeAttribute('aria-selected');
+
+
+                const childrenTab = document.querySelector('#heading-tab-attributes');
+                childrenTab.removeAttribute('hidden');
+                childrenTab.querySelector('a').setAttribute('aria-selected', 'true');
+
+                const childrenData = document.querySelector('#tab-attributes');
+                childrenData.removeAttribute('hidden');
+
+                const parentsData =  document.querySelector('#tab-parents');
+                parentsData.setAttribute('hidden', true);
+
+                const attData =  document.querySelector('#tab-summary');
+                attData.setAttribute('hidden', true);
+
+                const datesData =  document.querySelector('#tab-dates');
+                datesData.setAttribute('hidden', true);
+
+
+                const moreData =  document.querySelector('#tab-more');
+                moreData.setAttribute('hidden', true);
+
+
+
+            }
+
+
+
+
+        })
+    })
+
+
+</script>
+
+
+<script>
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+        const text = link.textContent;
+
+        if(text.toLowerCase() == 'edit'){
+            link.href="update/insert-attribute-preselected";
+        }
+    });
+
+    const addressLink = document.querySelector('[data-address]');
+    addressLink.href="update/insert-address";
+
+
+</script>
+
+
+<!--tabs-->
+<script>
+
+    const tabs = document.querySelectorAll('.tab');
+
+    console.log({tabs});
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            const element = event.currentTarget;
+            const link = element.querySelector('a');
+            const linkText = link.textContent.toLowerCase();
+            const showHistory = document.querySelector('#show-history');
+
+            const detailsComponent = document.querySelector('#links');
+
+            if(linkText == 'attributes'){
+                detailsComponent.style.display = 'block';
+                detailsComponent.setAttribute('open','');
+            }else{
+                detailsComponent.removeAttribute('open');
+                detailsComponent.style.display = 'none';
+            }
+
+            if(linkText == 'dates'){
+                showHistory.style.display = 'none';
+            } else {
+                showHistory.style.display = 'block';
+            }
+        });
+    });
+
+
+</script>
+
+<!--Browse user-->
+<script>
+
+    const browseUser = sessionStorage.getItem("browse-user");
+    const allBrowseUserElements = document.querySelectorAll('[data-browse-user]');
+
+    if(browseUser == 'true'){
+        allBrowseUserElements.forEach(element => {
+            element.dataset.browseUser="true";
+        });
+    }
+
+    //disable dates
+    if(browseUser == 'true') {
+        const dateInputs = document.querySelectorAll('input[id^="example"]');
+
+        dateInputs.forEach(dateInput => dateInput.setAttribute('disabled', "true"));
+    }else if (browseUser == 'false') {
+        const dateInputs = document.querySelectorAll('input[id^="example"]');
+        dateInputs.forEach(dateInput => dateInput.removeAttribute('disabled'));
+    }
+
+
+
+</script>
+
+{% endblock %}

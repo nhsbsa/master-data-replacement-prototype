@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree view</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="bulkmove-search-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Bulk move search criteria
+            </h1>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Hospital trust code
+            </label>
+
+            <input class="nhsuk-input" id="code" name="example" type="text"  >
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Name
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Address
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+                Other type
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1">Email</option>
+                <option value="2" selected>Telephone</option>
+                <option value="3">Other options</option>
+
+            </select>
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Other search options
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit" href="bulkmove-searchsummary-page" id="search">
+                    Search
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<script>-->
+
+<!--    const searchBtn = document.querySelector('#search');-->
+<!--    const field = document.querySelector('#code');-->
+
+<!--    searchBtn.addEventListener("click", (e) => {-->
+<!--    e.preventDefault();-->
+
+<!--    console.log(field.value);-->
+
+<!--        if(field.value == ""){-->
+<!--         window.location = "bulkmove-Searchnoresult-page";-->
+<!--        }else {-->
+<!--        window.location="bulkmove-Searchsummary-page";-->
+<!--        }-->
+<!--    }-->
+<!--    );-->
+
+<!--</script>-->
+
+
+{% endblock %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

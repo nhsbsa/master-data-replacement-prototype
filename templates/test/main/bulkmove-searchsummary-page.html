@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree view</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="bulkmove-search-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="bulkmove-searchcriteria-page" class="nhsuk-breadcrumb__link">Search criteria</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+<!-- Main content wrapper here -->
+
+<!--title-->
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Bulk move search summary
+            </h1>
+        </div>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Hospital trust code
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    RMQ00*
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Chelsea and Westminster hospital NHS FT
+                </dd>
+
+            </div>
+
+
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">-->
+<!--                    Address/CCG-->
+<!--                </dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    North East Ambulance Services.NHS Trust /RX600-->
+<!--                </dd>-->
+
+<!--            </div>-->
+
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">-->
+<!--                    Parent org name/code-->
+<!--                </dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    Y05633-->
+<!--                </dd>-->
+
+<!--            </div>-->
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Dates
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>01 April 2004 to 31 December 9999</p>
+
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="bulkmove-select-page">
+                        Select
+                    </a>
+
+                </dd>
+
+            </div>
+
+        </dl>
+        <hr>
+        <div class="grid-row">
+
+            <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Hospital trust code
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        RMQ00*
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Chelsea and Westminster hospital NHS FT
+                    </dd>
+
+                </div>
+<!--                <div class="nhsuk-summary-list__row">-->
+<!--                    <dt class="nhsuk-summary-list__key">-->
+<!--                        Address/CCG-->
+<!--                    </dt>-->
+<!--                    <dd class="nhsuk-summary-list__value">-->
+
+<!--                        Another practice / another code-->
+<!--                    </dd>-->
+
+<!--                </div>-->
+
+<!--                <div class="nhsuk-summary-list__row">-->
+<!--                    <dt class="nhsuk-summary-list__key">-->
+<!--                        Parent org name/code-->
+<!--                    </dt>-->
+<!--                    <dd class="nhsuk-summary-list__value">-->
+<!--                        Y05633-->
+<!--                    </dd>-->
+
+<!--                </div>-->
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Dates
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <p>01 April 1993 to 31 March 2004</p>
+
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+
+                        <a href="bulkmove-select-page">
+                            Select
+                        </a>
+
+                    </dd>
+
+                </div>
+
+            </dl>
+
+            <hr>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

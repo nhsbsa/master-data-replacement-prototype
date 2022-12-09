@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+
+        <div class="column-two-thirds">
+            <h1>Search for organisational unit/prescriber dispenser
+            </h1>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1"> Enter organisational unit/prescriber dispenser title
+            </label>
+            <div class="nhsuk-hint" id="example-uom-hint">
+
+            </div>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1"></option>
+                <option value="2">Country</option>
+                <option value="3">Region</option>
+                <option value="4">Integrated care board (ICB)</option>
+                <option value="5">Commissioner or provider in England</option>
+                <option value="6">NHS Trust</option>
+                <option value="7">Hospital unit</option>
+                <option value="8">GP practice/Cost centre</option>
+                <option value="9">Private group</option>
+                <option value="10">Contractor</option>
+                <option value="11">Contact for report</option>
+                <option value="12">Health and wellbeing board</option>
+                <option value="13">Dental practice</option>
+                <option value="14">Processing division</option>
+                <option value="15">Community nurse prescribing unit (CNPC)</option>
+                <option value="16">Primary care group (PCG)</option>
+                <option value="17">Oxygen region</option>
+                <option value="18">Oxygen supplier</option>
+                <option value="19">Oxygen region</option>
+                <option value="20">MOD region</option>
+                <option value="21">MOD medical site</option>
+                <option value="22">MOD pharmacy contractor</option>
+                <option value="23">MOD RO dummy</option>
+                <option value="24">MOD STP/ICB dummy</option>
+                <option value="25">MOD CCG dummy</option>
+                <option value="26">General practitioner (GP)</option>
+                <option value="27">Nurse</option>
+                <option value="28">Additional prescriber</option>
+                <option value="29">Private doctor</option>
+                <option value="30">Private nurse</option>
+                <option value="31">Private additional prescriber</option>
+                <option value="32">Hospital doctor</option>
+                <option value="33">Dentist</option>
+                <option value="34">MOD prescriber</option>
+            </select>
+
+        </div>
+
+
+    <div class="column-two-thirds">
+        <a class="nhsuk-button" type="submit " href="Searchcriteria-page">
+            Search
+        </a>
+    </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+<!--  accessibleAutocomplete.enhanceSelectElement({-->
+<!--    defaultValue : '',-->
+<!--    autoselect : true,-->
+<!--    placeholder : 'Search organisation',-->
+<!--    selectElement : document.querySelector('#select-1'),-->
+<!--  })-->
+accessibleAutocomplete.enhanceSelectElement({
+defaultValue: "",
+autoselect: true,
+showAllValues: true,
+confirmOnBlur: false,
+showNoOptionsFound: true,
+selectElement: document.querySelector("#select-1"),
+})
+
+
+
+</script>
+{% endblock %}
+
+accessibleAutocomplete.enhanceSelectElement({
+defaultValue: "",
+autoselect: true,
+showAllValues: true,
+confirmOnBlur: false,
+showNoOptionsFound: true,
+selectElement: document.querySelector("#pack-type"),
+});

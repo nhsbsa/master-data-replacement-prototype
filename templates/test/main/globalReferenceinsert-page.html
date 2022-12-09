@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block optional %}
+<!--<a style="color: white; float: right;" href="SearchResultsnontab-page" class="nhsuk-breadcrumb__link">Back </a>-->
+{% endblock %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="globalReference-page" class="nhsuk-breadcrumb__link">Global reference</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="globalReferenceresults-page" class="nhsuk-breadcrumb__link">Global reference results</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1> Insert global reference parameter
+            </h1>
+        </div>
+
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="address-town">
+                    ID
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="address-county">
+                    Value
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="address-town">
+                    Description
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
+            </div>
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                        Date effective
+                    </h1>
+                </legend>
+                <div class="nhsuk-hint" id="example-hint">
+                    For example, 15 3 1984
+                </div>
+
+                <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                Day
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                                Month
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                                Year
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+
+
+        </fieldset>
+
+
+        <a class="nhsuk-button" type="submit " href="globalReferenceresults-page">
+            Save
+        </a>
+
+        <a class="nhsuk-button nhsuk-button--secondary" type="submit " href="globalReferenceresults-page">
+            Cancel
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-type" class="nhsuk-breadcrumb__link">Insert OU/PD</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-name" class="nhsuk-breadcrumb__link">Name</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-code" class="nhsuk-breadcrumb__link">Code</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-ocs-code" class="nhsuk-breadcrumb__link">OCS code</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-relationship" class="nhsuk-breadcrumb__link">Relationships</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+<style>
+    details[open] + form {
+        display: none;
+    }
+</style>
+
+<div class="nhsuk-width-container">
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="insert-relationship-additional.html" class="nhsuk-back-link__link" id="back-link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Go back-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <h1 class="nhsuk-heading-l">Address</h1>
+
+<!--    <details class="nhsuk-details" id="details">-->
+<!--        <summary class="nhsuk-details__summary">-->
+<!--            <span class="nhsuk-details__summary-text">Carry out an address search</span>-->
+<!--        </summary>-->
+<!--        <div class="nhsuk-details__text">-->
+
+<!--            <div class="nhsuk-table__panel-with-heading-tab" style="width: 45%" >-->
+<!--                <h3 class="nhsuk-table__heading-tab">Search</h3>-->
+<!--                <form action="" id="search-form">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label for="search" class="nhsuk-label nhsuk-label&#45;&#45;s">Criteria</label>-->
+<!--                        <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-20" id="search">-->
+<!--                    </div>-->
+
+
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <button class="nhsuk-button" id="btn-search">Search</button>-->
+<!--                        <button class="nhsuk-button nhsuk-button&#45;&#45;secondary" id="btn-reset">Reset filter</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+
+
+<!--            <div class="nhsuk-table__panel-with-heading-tab nhsuk-table-responsive  " id="table-results" hidden>-->
+<!--                <h2 class="nhsuk-table__heading-tab">Results</h2>-->
+<!--                <table class="nhsuk-table">-->
+<!--                    <thead class="nhsuk-table__head">-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <th role="columnheader" scope="col">Address</th>-->
+<!--                        <th role="columnheader" scope="col">Selecct</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody class="nhsuk-table__body">-->
+<!--                    <tr role="row" class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">114 WESTBOURNE ROAD, HANDSWORTH, BIRMINGHAM, , B21 9TU</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-contact="114 WESTBOURNE ROAD, HANDSWORTH, BIRMINGHAM, , B21 9TU" >Select</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">OAKESWELL HEALTH CENTRE, BRUNSWICK PARK ROAD, WEDNESBURY, WEST MIDLANDS, WS10 6TY</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-contact="OAKESWELL HEALTH CENTRE, BRUNSWICK PARK ROAD, WEDNESBURY, WEST MIDLANDS, WS10 6TY">Select</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">727 WEST ROAD, , NEWCASTLE, , NE15 7SE</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-contact="727 WEST ROAD, , NEWCASTLE, , NE15 7SE">Select</a></td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--                <nav class="nhsuk-pagination" aria-label="Pagination" role="navigation" >-->
+<!--                    <ul class="nhsuk-list nhsuk-pagination__list">-->
+<!--                        <li class="" style="display: inline-block; margin-right: 10px">-->
+<!--                            <a href="" class="nhsuk-pagination__link " >-->
+<!--                                <span class="" aria-hidden="true" role="presentation" style="">«</span>-->
+<!--                                <span class="" >Previous</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--                        <li class="" style="display: inline-block;">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">1</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">2</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">3</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="margin-left: 10px">-->
+<!--                                <span class="" style="">Next</span>-->
+<!--                                <span class="" aria-hidden="true" role="presentation" style="margin: 0">»</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <span style="display: inline; float: right">Showing 1 - 3 of 10 results</span>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--    </details>-->
+
+    <span class="nhsuk-hint">
+        If the full address is not known you can carry out an
+    <a href="address-search" class="nhsuk-link--no-visited-state nhsuk-u-margin-bottom-2 nhsuk-u-font-size-19" >
+        address search
+    </a>
+    </span>
+
+    <form action="">
+
+        <fieldset class="nhsuk-fieldset" role="group" >
+
+            <div class="nhsuk-form-group">
+                <label for="address-1" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-3" id="label-type" >Address Line 1</label>
+                <input type="text" id="address-1" class="nhsuk-input  nhsuk-input--width-20">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label for="address-2" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type-2">Address Line 2</label>
+                <input type="text" id="address-2" class="nhsuk-input  nhsuk-input--width-20">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label for="address-3" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type-3">Address Line 3</label>
+                <input type="text" id="address-3" class="nhsuk-input  nhsuk-input--width-20">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label for="address-4" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type-4">Address Line 4</label>
+                <input type="text" id="address-4" class="nhsuk-input  nhsuk-input--width-20">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label for="postcode" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type-4">Postcode</label>
+                <input type="text" id="postcode" class="nhsuk-input  nhsuk-input--width-10">
+            </div>
+
+        </fieldset>
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">Start Date</legend>-->
+<!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                    <div class="nhsuk-date-input" id="example">-->
+
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </fieldset>-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">End Date</legend>-->
+<!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                    <div class="nhsuk-date-input" id="example">-->
+
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </fieldset>-->
+<!--            </div>-->
+
+        <a href="summary" id="continue" class="nhsuk-button nhsuk-u-margin-top-3">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+    const queryParams = window.location.search;
+    const urlParams = new URLSearchParams(queryParams);
+    const change = urlParams.get('change');
+    const backLink = document.querySelector('#back-link');
+
+    if(change == 'true'){
+        backLink.href="summary.html"
+    }
+
+    const address1  = urlParams.get('address1');
+    const address2  = urlParams.get('address2');
+    const address3  = urlParams.get('address3');
+    const address4  = urlParams.get('address4');
+    const postcode  = urlParams.get('postcode');
+
+    const address1Element = document.querySelector('#address-1');
+    const address2Element  = document.querySelector('#address-2');
+    const address3Element  = document.querySelector('#address-3');
+    const address4Element  = document.querySelector('#address-4');
+    const postcodeElement  = document.querySelector('#postcode');
+
+    address1Element.value = address1;
+    address2Element.value = address2;
+    address3Element.value = address3;
+    address4Element.value = address4;
+    postcodeElement.value = postcode;
+
+</script>
+
+<script>
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+<!--<script>-->
+
+<!--    const button = document.querySelector('#continue');-->
+
+<!--    button.addEventListener("click", (event) => {-->
+<!--        event.preventDefault();-->
+<!--        const queryParams = window.location.search;-->
+<!--        const urlParams = new URLSearchParams(queryParams);-->
+<!--        const change = urlParams.get('change');-->
+
+<!--        const radioSelectedValue = document.querySelector('input[name="further-attributes"]:checked').value;-->
+
+<!--        if(radioSelectedValue === 'yes'){-->
+<!--            if(change == 'true'){-->
+<!--                window.location.href='insert-address?change=true';-->
+<!--            }-->
+
+<!--        } else {-->
+<!--            window.location.href='summary'-->
+<!--        }-->
+
+
+<!--    });-->
+<!--</script>-->
+
+
+<!--show results table when search button is clicked-->
+<!--<script>-->
+<!--    const btnSearch = document.querySelector('#btn-search');-->
+
+<!--    btnSearch.addEventListener('click', (event) => {-->
+<!--        event.preventDefault();-->
+<!--        const tblResults = document.querySelector('#table-results');-->
+<!--        tblResults.removeAttribute('hidden');-->
+
+<!--    })-->
+
+
+<!--    //    Hide results table when reset filter button is clicked-->
+
+<!--    const btnReset = document.querySelector('#btn-reset');-->
+
+<!--    btnReset.addEventListener('click', (event) => {-->
+<!--        event.preventDefault();-->
+<!--        const searchForm = document.querySelector('#search-form');-->
+<!--        searchForm.reset();-->
+
+<!--        //hide the result table-->
+<!--        const tblResults = document.querySelector('#table-results');-->
+<!--        tblResults.setAttribute('hidden', 'true');-->
+<!--    });-->
+
+
+<!--    //update the main form with the selected OU code and collapse the details-->
+<!--    const selectElements = document.querySelectorAll('[data-contact]');-->
+<!--    console.log(selectElements);-->
+
+<!--    selectElements.forEach(selectElem => {-->
+<!--        selectElem.addEventListener("click", (event) => {-->
+<!--            event.preventDefault();-->
+
+<!--            const addressDetails = event.currentTarget.dataset.contact.split(',');-->
+
+<!--            const address1 = document.querySelector('#address-1');-->
+<!--            const address2 = document.querySelector('#address-2');-->
+<!--            const address3 = document.querySelector('#address-3');-->
+<!--            const address4 = document.querySelector('#address-4');-->
+<!--            const postcode = document.querySelector('#postcode');-->
+
+<!--            address1.value= addressDetails[0];-->
+<!--            address2.value= addressDetails[1];-->
+<!--            address3.value= addressDetails[2];-->
+<!--            address4.value= addressDetails[3];-->
+<!--            postcode.value=addressDetails[4];-->
+
+<!--        }) ;-->
+<!--    })-->
+<!--</script>-->
+
+
+{% endblock %}

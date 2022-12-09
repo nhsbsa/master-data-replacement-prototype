@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree view</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/bulkmove-date-page" class="nhsuk-breadcrumb__link">Date</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Bulk move requests for Hospital RQM000
+            </h1>
+        </div>
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h3 class="nhsuk-fieldset__heading">
+                Current effective date 01/06/2022 <a href="bulkmove-date-page" title="External website">change date</a>
+            </h3>
+        </legend>
+
+
+        <details class="nhsuk-details ">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Do you want to filter results
+    </span>
+
+            </summary>
+            <div class="nhsuk-details__text">
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                           value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        Name
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                           value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        Code
+                    </label>
+                </div>
+                </fieldset>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="example">
+                        Enter name or code
+                    </label>
+                    <input class="nhsuk-input" id="example" name="example" type="text">
+                </div>
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+
+                        <a class="nhsuk-button nhsuk-button--secondary" type="submit " href="">
+                            Add
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </details>
+
+        <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Source item</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Code
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Select
+                </th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM000
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM001
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM002
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM003
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM000
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM001
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM002
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM003
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <div class="nhsuk-checkboxes">
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+<br>
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit " href="bulkmove-page">
+                    Move
+                </a>
+                <!--                <a class="nhsuk-button nhsuk-button&#45;&#45;secondary" type="submit " href="../index">-->
+                <!--                    Deactivate-->
+                <!--                </a>-->
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

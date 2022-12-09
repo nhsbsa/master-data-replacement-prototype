@@ -1,0 +1,563 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert general practioner</h1>
+    <h2 class="nhsuk-heading-m" id="parent">Bevan group practice</h2>
+<!--    <h3 class="nhsuk-heading-s" id="parent-type">Parent Type: GP practice / Cost centre </h3>-->
+    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+
+    <form action="">
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <label for="title" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-1">-->
+<!--                        Title-->
+<!--                    </label>-->
+<!--                    <select class="nhsuk-select" name="title" id="title">-->
+<!--                        <option value=""></option>-->
+<!--                        <option value="Mr">Mr</option>-->
+<!--                        <option value="Mrs">Mrs</option>-->
+<!--                        <option value="Ms">MS</option>-->
+<!--                        <option value="Miss">Miss</option>-->
+<!--                        <option value="Doctor">Doctor</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <div class="nhsuk-fieldset">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">-->
+<!--                            Title-->
+<!--                        </legend>-->
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">-->
+<!--                            Select one option-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios nhsuk-radios&#45;&#45;inline">-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="mr" name="title" value="mr">-->
+<!--                                <label for="mr" class="nhsuk-label nhsuk-radios__label">Mr</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="mrs" name="title" value="mrs">-->
+<!--                                <label for="mrs" class="nhsuk-label nhsuk-radios__label">Mrs</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="ms" name="title" value="Ms">-->
+<!--                                <label for="ms" class="nhsuk-label nhsuk-radios__label">Ms</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="miss" name="title" value="miss">-->
+<!--                                <label for="miss" class="nhsuk-label nhsuk-radios__label">Miss</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="doctor" name="title" value="doctor">-->
+<!--                                <label for="doctor" class="nhsuk-label nhsuk-radios__label">Doctor</label>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div  class="nhsuk-form-group">-->
+<!--                    <label for="initials" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2">Initials</label>-->
+<!--                    <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-3" id="initials" name="initials">-->
+<!--                </div>-->
+
+                <div  class="nhsuk-form-group">
+                    <label for="surname" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2">Surname</label>
+                    <input type="text" class="nhsuk-input nhsuk-input--width-20" id="surname" name="surname">
+                </div>
+
+<!--                <div  class="nhsuk-form-group">-->
+<!--                    <label for="forename" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2">Forename</label>-->
+<!--                    <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-20" id="forename" name="forename">-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <div class="nhsuk-fieldset">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">-->
+<!--                            Gender-->
+<!--                        </legend>-->
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">-->
+<!--                            Select one option-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios">-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="female" name="gender" value="mr">-->
+<!--                                <label for="female" class="nhsuk-label nhsuk-radios__label">Female</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="male" name="gender" value="mrs">-->
+<!--                                <label for="male" class="nhsuk-label nhsuk-radios__label">Male</label>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input type="radio" class="nhsuk-radios__input" id="other" name="gender" value="Ms">-->
+<!--                                <label for="other" class="nhsuk-label nhsuk-radios__label">Other</label>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">Date of birth</legend>-->
+<!--                        <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                        <div class="nhsuk-date-input" id="example">-->
+
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                    <input type="text" id="day" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" name="day">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                    <input type="text" id="month" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" name="month">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                    <input type="text" id="year" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" name="year">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </fieldset>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <label for="gmc" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-1">GMC code</label>-->
+<!--                    <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-10" id="gmc" name="gmc">-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">Allocation date</legend>-->
+<!--                        <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                        <div class="nhsuk-date-input" id="example">-->
+
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="allocation-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                    <input type="text" id="allocation-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" name="allocation-day">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="allocation-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                    <input type="text" id="allocation-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" name="allocation-month">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="nhsuk-date-input__item">-->
+<!--                                <div class="nhsuk-form-group">-->
+<!--                                    <label for="allocation-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                    <input type="text" id="allocation-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" name="allocation-year">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </fieldset>-->
+<!--                </div>-->
+
+
+
+
+<!--                <div class="nhsuk-form-group">-->
+
+<!--                    <fieldset class="nhsuk-fieldset">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s nhsuk-u-margin-bottom-0">-->
+<!--                            <span class="nhsuk-label nhsuk-label&#45;&#45;s">Does the GP operate a limited service?</span>-->
+<!--                        </legend>-->
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3 nhsuk-u-margin-top-0">-->
+<!--                            A limited service is where the GP only ...-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios">-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="yes" name="limited-service" type="radio" value="yes">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="yes">-->
+<!--                                    Yes-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="no" name="limited-service" type="radio" value="no">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="no">-->
+<!--                                    No-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                    </fieldset>-->
+<!--                </div>-->
+
+
+<!--                <div class="nhsuk-form-group nhsuk-u-margin-top-6 ">-->
+<!--                    <fieldset class="nhsuk-fieldset">-->
+<!--                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s nhsuk-u-margin-bottom-0">-->
+<!--                        <span class="nhsuk-label nhsuk-label&#45;&#45;s">Is the GP prescribing only?</span>-->
+<!--                    </legend>-->
+
+<!--&lt;!&ndash;                    <div class="nhsuk-hint nhsuk-u-margin-bottom-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                        A prescribing only GP is where the GP only ...&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--                    <div class="nhsuk-radios">-->
+<!--                        <div class="nhsuk-radios__item">-->
+<!--                            <input class="nhsuk-radios__input" id="yes" name="limited-service" type="radio" value="yes">-->
+<!--                            <label class="nhsuk-label nhsuk-radios__label" for="yes">-->
+<!--                                Yes-->
+<!--                            </label>-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios__item">-->
+<!--                            <input class="nhsuk-radios__input" id="no" name="limited-service" type="radio" value="no">-->
+<!--                            <label class="nhsuk-label nhsuk-radios__label" for="no">-->
+<!--                                No-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </fieldset>-->
+<!--                </div>-->
+
+
+                <div class="nhsuk-form-group nhsuk-u-margin-top-6">
+                    <div class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                            <span class="nhsuk-label--s">Name manipulation method</span>
+                        </legend>
+
+                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">
+                            The name manipulation method determines the way the doctor’s name appears on pre-printed prescriptions
+                        </div>
+
+                        <div class="nhsuk-radios">
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-1">
+                                <label class=" nhsuk-radio nhsuk-radios__label" for="option-1">Insert "Dr" and rotate surname and initials on last space</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-2" value="2">
+                                <label class=" nhsuk-radio nhsuk-radios__label" for="option-2">No manipualation</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-3" value="3">
+                                <label class=" nhsuk-radio nhsuk-radios__label" for="option-3">Insert "Dr"</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="option-4">
+                                <label  class=" nhsuk-radio nhsuk-radios__label" for="option-4">Insert "Dr" and rotate surname and initials on first space </label>
+                            </div>
+                        </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+
+
+
+<!--                <div class="nhsuk-form-group">-->
+
+<!--                    <fieldset class="nhsuk-fieldset">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s nhsuk-u-margin-bottom-0">-->
+<!--                            <span class="nhsuk-label nhsuk-label&#45;&#45;s">Is the GP salaried?</span>-->
+<!--                        </legend>-->
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">-->
+<!--                            A salaried GP ...-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios">-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="yes" name="limited-service" type="radio" value="yes">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="yes">-->
+<!--                                    Yes-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="no" name="limited-service" type="radio" value="no">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="no">-->
+<!--                                    No-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                    </fieldset>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-form-group">-->
+<!--                    <fieldset class="nhsuk-fieldset">-->
+<!--                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s nhsuk-u-margin-bottom-0">-->
+<!--                            <span class="nhsuk-label nhsuk-label&#45;&#45;s">Is the GP suspended?</span>-->
+<!--                        </legend>-->
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">-->
+<!--                            A suspended GP ...-->
+<!--                        </div>-->
+
+<!--                        <div class="nhsuk-radios">-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="yes" name="limited-service" type="radio" value="yes">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="yes">-->
+<!--                                    Yes-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                            <div class="nhsuk-radios__item">-->
+<!--                                <input class="nhsuk-radios__input" id="no" name="limited-service" type="radio" value="no">-->
+<!--                                <label class="nhsuk-label nhsuk-radios__label" for="no">-->
+<!--                                    No-->
+<!--                                </label>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                    </fieldset>-->
+<!--                </div>-->
+
+                <hr>
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                            <!--                            Prescribing only doctor indicator-->
+                            Doctor indicator
+                        </legend>
+
+
+                        <div class="nhsuk-radios nhsuk-radios--inline ">
+
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="indicator-option-1" name="prescribing-only-doctor-indicator">
+                                <label for="indicator-option-1" class="nhsuk-label nhsuk-radios__label">Prescribing only doctor</label>
+                            </div>
+
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="prescribing-only-doctor-indicator" class="nhsuk-radios__input" id="indicator-option-2">
+                                <label for="indicator-option-2" class="nhsuk-label nhsuk-radios__label">Dispensing doctor</label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                            Pay indicator
+                        </legend>
+
+
+                        <div class="nhsuk-radios nhsuk-radios--inline ">
+
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="pay-indicator-option-1" name="pay-indicator">
+                                <label for="pay-indicator-option-1" class="nhsuk-label nhsuk-radios__label">Partner</label>
+                            </div>
+
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="pay-indicator" class="nhsuk-radios__input" id="pay-indicator-option-2">
+                                <label for="pay-indicator-option-2" class="nhsuk-label nhsuk-radios__label">Salaried</label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group nhsuk-u-margin-top-5">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                <span class="nhsuk-fieldset__heading">
+                                    Limited service indicator
+                                </span>
+                        </legend>
+
+                        <div class="nhsuk-checkboxes">
+
+                            <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="limited-service" name="Limited service" type="checkbox" value="Limited service">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="limited-service">
+                                    Limited service list
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group nhsuk-u-margin-top-5">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                <span class="nhsuk-fieldset__heading">
+                                    Oxygen payment indicator
+                                </span>
+                        </legend>
+
+                        <div class="nhsuk-checkboxes">
+
+                            <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="oxygen-payment" name="Oxygen payment" type="checkbox" value="Oxygen payment">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="oxygen-payment">
+                                    Oxygen payment
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <hr>
+
+                <div class="nhsuk-form-group nhsuk-u-margin-top-6">
+                    <div class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                            <span class="nhsuk-label--s">Make lead prescriber?</span>
+                        </legend>
+
+<!--                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">-->
+<!--                            A lead prescriber is the responsible prescriber of the GP-->
+<!--                        </div>-->
+
+                        <div class="nhsuk-radios">
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="lead-option-yes">
+                                <label class=" nhsuk-radio nhsuk-radios__label" for="lead-option-yes">Yes</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" name="manipulation" class="nhsuk-radios__input" id="lead-option-no">
+                                <label class=" nhsuk-radio nhsuk-radios__label" for="lead-option-no">No</label>
+                            </div>
+                        </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="nhsuk-form-group nhsuk-u-margin-top-6">
+                    <div class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                            Do you want to add optional attributes?
+                        </legend>
+
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                                <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                                <label for="no" class="nhsuk-label nhsuk-radios__label">No</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-form-address" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+<script>
+
+    const continueBtn = document.querySelector('#continue');
+
+    continueBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const radioOption = document.querySelector('input[name="further-attributes"]:checked');
+
+
+        if(radioOption.value == 'yes'){
+            window.location.href ='additional-attribute';
+        }else {
+            window.location.href='insert-form-address';
+        }
+
+    })
+
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

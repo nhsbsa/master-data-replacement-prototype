@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-details" class="nhsuk-breadcrumb__link">Nurse Details</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-options" class="nhsuk-breadcrumb__link">Nurse Options</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert nurse</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Practice details</h2>
+<!--    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>-->
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-three-quarters">
+
+            <div class="nhsuk-hint">The practice for which you have chosen to relate the nurse to</div>
+            <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Bevan Group Practice
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Altcode
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        11N0F
+                    </dd>
+                </div>
+            </dl>
+
+        </div>
+    </div>
+
+
+    <form action="">
+
+<!--        <fieldset class="nhsuk-fieldset" role="group" >-->
+
+<!--            <div class="nhsuk-hint">Parent details</div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-1" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-3" id="label-type" >Address Line 1</label>-->
+<!--                <input type="text" id="address-1" class="nhsuk-input  nhsuk-input&#45;&#45;width-20" value="Bevan group paractice" disabled>-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-2" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-2">Address Line 2</label>-->
+<!--                <input type="text" id="address-2" class="nhsuk-input  nhsuk-input&#45;&#45;width-20" value="Bevan way" disabled>-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-3" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-3">Address Line 3</label>-->
+<!--                <input type="text" id="address-3" class="nhsuk-input  nhsuk-input&#45;&#45;width-20"  value="Widnes" disabled >-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-4" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-4">Address Line 4</label>-->
+<!--                <input type="text" id="address-4" class="nhsuk-input  nhsuk-input&#45;&#45;width-20"  value="Cheshire" disabled>-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="postcode" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-4">Postcode</label>-->
+<!--                <input type="text" id="postcode" class="nhsuk-input  nhsuk-input&#45;&#45;width-10"  value="WA8 6TR" disabled>-->
+<!--            </div>-->
+
+<!--        </fieldset>-->
+
+
+        <div class="nhsuk-form-group">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                    Do you want to add a further practice?
+                </legend>
+
+                <div class="nhsuk-hint">
+                    The above practice relationship is applied automatically. If you would like to add an additional practice to the nurse you can do so
+                </div>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                        <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                        <label for="no" class="nhsuk-label nhsuk-radios__label">No</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="summary" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+
+<script>
+
+    const continueBtn = document.querySelector('#continue');
+
+    continueBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const radioOption = document.querySelector('input[name="further-attributes"]:checked');
+
+
+        if(radioOption.value == 'yes'){
+            window.location.href ='insert-form-address-additional.html';
+        }else {
+            window.location.href='summary';
+        }
+
+    })
+
+</script>
+
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

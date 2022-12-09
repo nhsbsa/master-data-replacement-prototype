@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert 2</h1>
+
+    <div class="nhsuk-back-link">
+        <a href="../insert/insert.html" class="nhsuk-back-link__link">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            </svg>
+            Go back
+        </a>
+    </div>
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+            <fieldset class="nhsuk-fieldset" role="group" >
+                <div class="nhsuk-form-group">
+                    <label for="type" class="nhsuk-label nhsuk-label--s">Hospital Type</label>
+                    <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+                </div>
+            </fieldset>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: -8px; margin-left: 30px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+<!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-0">Start Date</legend>
+<!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: -8px; margin-left: 10px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-0">End Date</legend>
+                    <!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+            <fieldset class="nhsuk-fieldset" role="group" >
+                <div class="nhsuk-form-group">
+                    <label for="type" class="nhsuk-label nhsuk-label--s">Hospital Code</label>
+                    <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+                </div>
+            </fieldset>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: 20px; margin-left: 30px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+
+                    <!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: 20px; margin-left: 10px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+                    <!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+            <fieldset class="nhsuk-fieldset" role="group" >
+                <div class="nhsuk-form-group">
+                    <label for="type" class="nhsuk-label nhsuk-label--s">Hospital OCS Code</label>
+                    <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+                </div>
+            </fieldset>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: 20px; margin-left: 30px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+
+                    <!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" style="margin-top: 20px; margin-left: 10px">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <!--                    <label class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-0">Start Date</label>-->
+                    <!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--    <fieldset class="nhsuk-fieldset" role="group" >-->
+<!--        <div class="nhsuk-form-group">-->
+<!--            <label for="type" class="nhsuk-label nhsuk-label&#45;&#45;s">Hospital Type</label>-->
+<!--            <input type="text" id="type" class="nhsuk-input  nhsuk-input&#45;&#45;width-20">-->
+<!--        </div>-->
+<!--        <div class="nhsuk-form-group">-->
+<!--            <label for="code" class="nhsuk-label nhsuk-label&#45;&#45;s">Hospital Code</label>-->
+<!--            <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-20" id="code">-->
+<!--        </div>-->
+<!--        <div class="nhsuk-form-group">-->
+<!--            <label for="ocs-code" class="nhsuk-label nhsuk-label&#45;&#45;s">Hospital OCS Code</label>-->
+<!--            <input type="text" id="ocs-code" class="nhsuk-input nhsuk-input&#45;&#45;width-20">-->
+<!--        </div>-->
+<!--    </fieldset>-->
+<!--    <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert3">Continue</a>-->
+
+
+<!--    <div class="nhsuk-form-group">-->
+<!--        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">Start Date</legend>-->
+<!--            <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--            <div class="nhsuk-date-input" id="example">-->
+
+<!--                <div class="nhsuk-date-input__item">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                        <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-date-input__item">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                        <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-date-input__item">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                        <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </fieldset>-->
+<!--    </div>-->
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Organisation unit',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+{% endblock %}

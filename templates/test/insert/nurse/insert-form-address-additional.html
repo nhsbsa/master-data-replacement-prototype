@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-details" class="nhsuk-breadcrumb__link">Nurse Details</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-options" class="nhsuk-breadcrumb__link">Nurse Options</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert nurse</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Bevan group practice</h2>
+    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+
+    <form action="">
+
+        <fieldset class="nhsuk-fieldset" role="group" >
+
+             <span class="nhsuk-hint">
+        If the parent practice is not known you can carry out a &nbsp;
+        <a href="parent-search" class="nhsuk-link--no-visited-state 3 nhsuk-u-margin-bottom-2 nhsuk-u-font-size-19" style="margin-left: -10px; display: inline-block">
+            parent search
+        </a>
+    </span>
+
+
+            <div class="nhsuk-form-group">
+                <legend
+                        class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <label id="qcompanyNameLabel" class="nhsuk-heading-s nhsuk-u-margin-bottom-1"
+                           for="code">Parent practice</label>
+                </legend>
+
+                <select id="code"
+                        class="nhsuk-select nhsuk-input--width-10" style="width:100%"
+                        aria-labelledby="qcompanyNameLabel">
+                    <option value=""></option>
+                    <option value="FRQ12">FRQ12 - Blackburn with Darwen CCG</option>
+                    <option value="XXW00">XXW00 - Central Manchaster CCG</option>
+                    <option value="SJQ12">TTG00 - Newcastle North and East CCG</option>
+                </select>
+            </div>
+
+
+<!--            <div class="nhsuk-hint">Parent address</div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-1" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-3" id="label-type" >Address Line 1</label>-->
+<!--                <input type="text" id="address-1" class="nhsuk-input  nhsuk-input&#45;&#45;width-20" value="" >-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-2" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-2">Address Line 2</label>-->
+<!--                <input type="text" id="address-2" class="nhsuk-input  nhsuk-input&#45;&#45;width-20" value="" >-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-3" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-3">Address Line 3</label>-->
+<!--                <input type="text" id="address-3" class="nhsuk-input  nhsuk-input&#45;&#45;width-20"  value="" >-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="address-4" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-4">Address Line 4</label>-->
+<!--                <input type="text" id="address-4" class="nhsuk-input  nhsuk-input&#45;&#45;width-20"  value="" >-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <label for="postcode" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2" id="label-type-4">Postcode</label>-->
+<!--                <input type="text" id="postcode" class="nhsuk-input  nhsuk-input&#45;&#45;width-10"  value="" >-->
+<!--            </div>-->
+<!--        </fieldset>-->
+
+
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">Start Date</legend>
+                            <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                            <div class="nhsuk-date-input" id="example">
+
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                        <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                        <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" >
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                        <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3" >
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">End Date</legend>
+                            <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                            <div class="nhsuk-date-input" id="example">
+
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                        <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" >
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                        <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" >
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                        <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3" >
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+
+
+        <div class="nhsuk-form-group">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                    Do you want to add a further parent address?
+                </legend>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                        <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                        <label for="no" class="nhsuk-label nhsuk-radios__label">No</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="summary" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+
+<script type="text/javascript">
+
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Parent code',
+        showAllValues: true,
+        selectElement : document.querySelector('#code'),
+    })
+</script>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+<script>
+    const queryParams = window.location.search;
+    const urlParams = new URLSearchParams(queryParams);
+    const change = urlParams.get('change');
+    const mainCode = urlParams.get('maincode');
+
+    if(mainCode != null || mainCode != 'undefined'){
+        const maincodeInput = document.querySelector('#code');
+        maincodeInput.value=mainCode;
+    }
+
+    const continueBtn = document.querySelector('#continue');
+
+    continueBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const radioOption = document.querySelector('input[name="further-attributes"]:checked');
+
+        if (change == 'true' && radioOption.value == 'no') {
+            window.location.href = "summary";
+        } else if (change == 'true' && radioOption.value == 'yes') {
+            window.location = 'insert-form-address-additional?change=true';
+        } else if (change == 'null' && radioOption.value == 'yes') {
+            window.location = 'insert-form-address-additional';
+        } else if (radioOption.value == 'yes'){
+            window.location = 'insert-form-address-additional';
+        }
+        else {
+            window.location.href = "summary";
+        }
+
+    });
+
+
+
+</script>
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+
+
+
+{% endblock %}

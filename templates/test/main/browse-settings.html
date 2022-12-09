@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="nhsuk-width-container">
+            <h1>Browse settings
+            </h1>
+
+        <form>
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                        Show historic data?
+                    </legend>
+
+                    <div class="nhsuk-hint" id="example-hint">
+                        Select to view historic data
+                    </div>
+
+                    <div class="nhsuk-checkboxes">
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                                Yes I would like to view historic data
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <hr>
+
+            <div class="nhsuk-u-margin-top-6">
+
+                    <div class="nhsuk-form-group">
+                        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                            <legend class="nhsuk-fieldset__legend nhsuk-label--m">
+                                <h1 class="nhsuk-fieldset__heading">
+                                    Browse date
+                                </h1>
+                            </legend>
+                            <div class="nhsuk-hint" id="example-hint">
+                                For example, 15 3 1984
+                            </div>
+
+                            <div class="nhsuk-date-input" id="example">
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
+                                            Day
+                                        </label>
+                                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
+                                            Month
+                                        </label>
+                                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="nhsuk-date-input__item">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
+                                            Year
+                                        </label>
+                                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+
+            <hr>
+
+
+        </form>
+
+            <a class="nhsuk-button" type="submit " href="../tree">
+                Save
+            </a>
+    </div>
+</div>
+
+{% endblock %}

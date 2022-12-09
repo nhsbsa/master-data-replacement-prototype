@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="budget-financial-start-date" class="nhsuk-breadcrumb__link">Date</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+
+            <h1>Budgets summary
+            </h1>
+
+
+            <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Year commencing
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        01 April 2021
+                    </dd>
+
+                    <dd class="nhsuk-summary-list__actions">
+
+                        <a href="budget-financial-start-date">
+                            Change<span class="nhsuk-u-visually-hidden"> name</span>
+                        </a>
+
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Create a CSV file
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+
+                    </dd>
+
+                    <dd class="nhsuk-summary-list__actions">
+
+                        <a href="budget-csv-file">
+                            Create<span class="nhsuk-u-visually-hidden"> date</span>
+                        </a>
+
+                    </dd>
+
+                </div>
+            </dl>
+            <div class="grid-row">
+            <table role="table" class="nhsuk-table-responsive">
+                <caption class="nhsuk-table__caption" aria-hidden="true">Budget summary table</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Practice name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Practice code
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Budget (£'s only)
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                       Edit
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Notes
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Leywood surgery
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C78902
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>5,214,063
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Tuxford medical centre
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84008
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>832,805
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Kingfisher family practice
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84013
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>2,712,958
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Newgate medical group
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84024
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>5,427,279
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Crown house surgery
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>>C84035
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>1,961,768
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Riverside health centre
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84094
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>3,143,221
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Bawtry and Blyth medicla
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84101
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>532,876
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>North Laverton surgery
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>C84692
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>561,923
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Bassetlaw drug and alcohol service
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>Y00581
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>0
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>Not required
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Bassetlaw health partnership
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>Y03762
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>160,966
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Practice </span>Leywood surgery
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Code</span>c78902
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Budget </span>524068
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Edit</span><a href="budget-edit-page">Edit</a>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Notes </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <br>
+
+                                    <div class="grid-row">
+                                        <div class="column-two-thirds">
+                                            <a class="nhsuk-button" type="submit"
+                                               href="../index" >
+                                               Done
+                                            </a>
+<!--                                            <a class="nhsuk-button nhsuk-button&#45;&#45;secondary" type="submit"-->
+<!--                                               href="budget-financial-start-date">-->
+<!--                                                Cancel-->
+<!--                                            </a>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+
+    const searchBtn = document.querySelector('#search');
+    const field = document.querySelector('#code');
+
+    searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(field.value);
+
+        if(field.value == ""){
+         window.location = "Searchnoresult-page";
+        }else {
+        window.location="SearchResultsnontab-page";
+        }
+    }
+    );
+
+
+
+
+                </script>
+
+
+                {% endblock %}

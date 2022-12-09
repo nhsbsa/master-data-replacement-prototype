@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="grid-row">
+<!--    <ul>-->
+<!--      <li><a href="test/index">Start</a></li>-->
+<!--    </ul>-->
+    <div class="nhsuk-width-container">
+      <h1 class="heading-xlarge">MDR Prototype</h1>
+
+    <form action="/" method="POST">
+
+
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Browse only user?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-radios nhsuk-radios--inline">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="yes" name="browse-only" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="no" name="browse-only" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <input type="submit" id="continue-button" class="nhsuk-button" value="continue" href="/test/index">
+
+    </form>
+  </div>
+
+
+</div>
+
+<script>
+
+  const continueBtn = document.querySelector('#continue-button');
+
+  continueBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const radioSelected = document.querySelector('input[name="browse-only"]:checked');
+
+    //session storage
+    if(radioSelected.value == 'yes') {
+      sessionStorage.setItem("browse-user", "true");
+
+    } else if(radioSelected.value == 'no'){
+      sessionStorage.setItem("browse-user", "false");
+
+    }
+
+    console.log(sessionStorage.getItem("browse-user"));
+
+    window.location.href="/test/index";
+  });
+
+</script>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item" xmlns="http://www.w3.org/1999/html">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../main/test/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-details" class="nhsuk-breadcrumb__link">GP Details</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert general practioner</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Bevan group practice</h2>
+    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>
+
+
+    <form action="">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s nhsuk-u-margin-bottom-0">
+                    <span class="nhsuk-label nhsuk-label--m">Is the GP prescribing only?</span>
+                </legend>
+
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-3">
+                    A prescribing only GP is where the GP only ...
+                </div>
+
+                <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="yes" name="limited-service" type="radio" value="yes">
+                        <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            Yes
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="no" name="limited-service" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            No
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+
+
+
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-form-options-limited-salaried" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

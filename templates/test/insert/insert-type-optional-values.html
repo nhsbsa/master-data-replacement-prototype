@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block optional %}
+<a style="color: white; float: right;" href="insert-type" class="nhsuk-breadcrumb__link">Back to orignal</a>
+{% endblock %}
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled'
+        : 'js-enabled');
+</script>
+
+
+<style>
+    option[data-show]:checked {
+        color: red;
+    }
+</style>
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert organisation unit / prescriber dispenser</h1>
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="../tree.html" class="nhsuk-back-link__link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Cancel-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <div class="nhsuk-error-summary" hidden
+         aria-labelledby="errors-summary"
+         role="alert"
+          id="error-summary">
+        <h2 class="nhsuk-error-summary__title"
+            id="errors-summary">
+            There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list" id="error-ul">
+            </ul>
+        </div>
+
+    </div>
+
+<form action="">
+
+
+
+
+
+
+    <div class="nhsuk-form-group" #input-code>
+        <label class="nhsuk-label nhsuk-label--m nhsuk-u-margin-bottom-2" for="code" id="label-code">Input code</label>
+        <input type="text" class="nhsuk-input nhsuk-input--width-10" id="code">
+    </div>
+
+
+    <a class="nhsuk-button nhsuk-u-margin-top-5" href="insert-name" id="continue">Continue</a>
+</form>
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Organisation unit / Prescriber dispenser',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+{% endblock %}

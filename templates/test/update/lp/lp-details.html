@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block optional %}
+<a style="color: white; float: right;" href="insert-type-optional" class="nhsuk-breadcrumb__link">Go to optional</a>
+{% endblock %}
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled'
+        : 'js-enabled');
+</script>
+
+
+
+<div class="nhsuk-width-container">
+
+    <h1 class="nhsuk-heading-l" id="heading">Update lead prescriber</h1>
+    <h2 class="nhsuk-heading-l" id="parent">TSHEAU MH</h2>
+        <p>From: 16-May-2016 <br/>
+            To: 31-December-9999
+        </p>
+
+
+    <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+        <table class="nhsuk-table">
+            <h2 class="nhsuk-table__heading-tab">Available prescribers</h2>
+            <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+                <th role="columnheader" class="nhsuk-table__header"  scope="col" >PD code</th>
+                <th role="columnheader" class="nhsuk-table__header"  scope="col" >Name</th>
+                <th role="columnheader" class="nhsuk-table__header"  scope="col" >Date effective</th>
+                <th role="columnheader" class="nhsuk-table__header"  scope="col" >Date inactive</th>
+                <th role="columnheader" class="nhsuk-table__header"  scope="col" >Select</th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">110755</td>
+                <td class="nhsuk-table__cell">Bree JS</td>
+                <td class="nhsuk-table__cell">16/05/2016</td>
+                <td class="nhsuk-table__cell">31/12/9999</td>
+                <td class="nhsuk-table__cell"><a href="dates" class="nhsuk-link--no-visited-state">Select</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">10A0343</td>
+                <td class="nhsuk-table__cell">Conner JD</td>
+                <td class="nhsuk-table__cell">01/06/2021</td>
+                <td class="nhsuk-table__cell">31/12/9999</td>
+                <td class="nhsuk-table__cell"><a href="dates" class="nhsuk-link--no-visited-state">Select</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">778625</td>
+                <td class="nhsuk-table__cell">Jones SJ</td>
+                <td class="nhsuk-table__cell">01/07/1997</td>
+                <td class="nhsuk-table__cell">3/09/9999</td>
+                <td class="nhsuk-table__cell"><a href="dates" class="nhsuk-link--no-visited-state">Select</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Organisation unit / Prescriber dispenser',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+
+
+{% endblock %}

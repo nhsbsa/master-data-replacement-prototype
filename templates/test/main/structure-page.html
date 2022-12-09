@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Set structures
+            </h1>
+        </div>
+
+        <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Active structures</h3>
+            <ul class="nhsuk-list nhsuk-list--tick">
+                <li>
+                    <strong class="nhsuk-tag">
+                        Active
+                    </strong>
+                    CONTACT FOR REPORTS <a href="">(Deactivate)</a>
+                </li>
+                <li>
+                    <strong class="nhsuk-tag">
+                        Active
+                    </strong>
+                    CTRY-RO-HA-GPP/CC-PP <a href="">(Deactivate)</a>
+                </li>
+                <li>
+                    <strong class="nhsuk-tag">
+                        Active
+                    </strong>
+                    CTRY-RO-HA-HOSP-HOSPDOC <a href="">(Deactivate)</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Inactive structures</h3>
+            <ul class="nhsuk-list nhsuk-list--cross">
+                <li>
+                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                        Inactive
+                    </strong>
+                    PPA-DIV-CONTRACTOR <a href="">(Activate)</a>
+                </li>
+                <li>
+                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                        Inactive
+                    </strong>
+                    CTRY-FED-USER-HA <a href="">(Activate)</a>
+                </li>
+                <li>
+                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                        Inactive
+                    </strong>
+                    CTRY-PAYMENT SITE <a href="">(Activate)</a>
+                </li>
+                <li>
+                    <strong class="nhsuk-tag nhsuk-tag--grey">
+                        Inactive
+                    </strong>
+                    CTRY-MOD REG-MOD SITE <a href="">(Activate)</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit " href="../index">
+                    Activate all
+                </a>
+                <a class="nhsuk-button nhsuk-button--secondary" type="submit " href="../index">
+                    Deactivate
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    {% endblock %}

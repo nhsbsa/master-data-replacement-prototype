@@ -1,0 +1,511 @@
+{% extends "base.html" %}
+
+{% block optional %}
+    <a style="color: white; float: right;" href="insert-relationship-additional" class="nhsuk-breadcrumb__link">Back to orignal</a>
+{% endblock %}
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-name" class="nhsuk-breadcrumb__link">Name</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-code" class="nhsuk-breadcrumb__link">Code</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-ocs-code" class="nhsuk-breadcrumb__link">OCS code</a>
+</li>
+{% endblock %}
+{% block content %}
+
+<style>
+    details[open] + form {
+        display: none;
+    }
+</style>
+
+
+
+
+
+<div class="nhsuk-width-container">
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="insert-relationship.html" class="nhsuk-back-link__link" id="back-link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Go back-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <h1 class="nhsuk-heading-l">Relationship</h1>
+
+<!--    <details class="nhsuk-details" id="details">-->
+<!--        <summary class="nhsuk-details__summary">-->
+<!--            <span class="nhsuk-details__summary-text">Carry out a parent search</span>-->
+<!--        </summary>-->
+<!--        <div class="nhsuk-details__text">-->
+
+<!--            <div class="nhsuk-table__panel-with-heading-tab">-->
+
+<!--                <h2 class="nhsuk-table__heading-tab">Search</h2>-->
+
+<!--                <form action="#" id="search-form">-->
+
+<!--                    <fieldset class="nhsuk-fieldset " role="group" >-->
+<!--                        <div class="nhsuk-form-group">-->
+<!--                            <legend-->
+<!--                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;l">-->
+<!--                                <label id="qcompanyNameLabel" class="nhsuk-heading-s nhsuk-u-margin-bottom-1"-->
+<!--                                       for="identity0">Parent Type</label>-->
+<!--                            </legend>-->
+
+<!--                            <select id="identity0"-->
+<!--                                    class="nhsuk-select nhsuk-input&#45;&#45;width-10" style="width:100%"-->
+<!--                                    aria-labelledby="qcompanyNameLabel">-->
+<!--                                <option value=""></option>-->
+<!--                                <option value="Commissioner or provider in England">Commissioner or provider in England</option>-->
+<!--                                <option value="Community unit">Community unit</option>-->
+<!--                                <option value="Hospital trust">Hospital trust</option>-->
+<!--                                <option value="Primary care trusts (PCT)">Primary care trusts (PCT)</option>-->
+<!--                                <option value="STP">STP</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+
+<!--                    </fieldset>-->
+
+<!--                    <div class="nhsuk-form-group">-->
+
+<!--                        <fieldset class="nhsuk-fieldset">-->
+<!--                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;m">-->
+<!--                                <span class="nhsuk-fieldset__heading">-->
+<!--                                    What do you want to search for?-->
+<!--                                </span>-->
+<!--                            </legend>-->
+
+<!--                            <div class="nhsuk-radios">-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input type="radio" class="nhsuk-radios__input" id="address" name="search-type" value="address">-->
+<!--                                    <label for="address" class="nhsuk-label nhsuk-radios__label">Address</label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input class="nhsuk-radios__input" id="email" name="search-type" type="radio" value="email">-->
+<!--                                    <label class="nhsuk-label nhsuk-radios__label" for="email">-->
+<!--                                        Email Address-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input class="nhsuk-radios__input" id="org-alt-code" name="search-type" type="radio" value="org-alt-code">-->
+<!--                                    <label class="nhsuk-label nhsuk-radios__label" for="org-alt-code">-->
+<!--                                        Organisation alt code-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input class="nhsuk-radios__input" id="org-contact-name" name="search-type" type="radio" value="org-contact-name">-->
+<!--                                    <label class="nhsuk-label nhsuk-radios__label" for="org-contact-name">-->
+<!--                                        Organisation contact name-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input class="nhsuk-radios__input" id="org-name" name="search-type" type="radio" value="org-name">-->
+<!--                                    <label class="nhsuk-label nhsuk-radios__label" for="org-name">-->
+<!--                                        Organisation name-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input class="nhsuk-radios__input" id="org-short-name" name="search-type" type="radio" value="org-short-name">-->
+<!--                                    <label class="nhsuk-label nhsuk-radios__label" for="org-short-name">-->
+<!--                                        Organisation short name-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="nhsuk-radios__item">-->
+<!--                                    <input  class="nhsuk-radios__input" type="radio" id="postcode" name="search-type" value="postcode">-->
+<!--                                    <label for="postcode" class="nhsuk-label nhsuk-radios__label" >Postcode</label>-->
+<!--                                </div>-->
+
+
+<!--                            </div>-->
+<!--                        </fieldset>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label nhsuk-label&#45;&#45;m nhsuk-u-margin-bottom-2" for="criteria" id="label-criteria">Criteria</label>-->
+<!--                        <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-30" id="criteria">-->
+<!--                    </div>-->
+
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <button class="nhsuk-button" id="btn-search">Search</button>-->
+<!--                        <button class="nhsuk-button nhsuk-button&#45;&#45;secondary" id="btn-reset">Reset filters</button>-->
+<!--                    </div>-->
+
+
+<!--                </form>-->
+
+<!--            </div>-->
+
+<!--            <div class="nhsuk-table__panel-with-heading-tab" id="table-results" hidden>-->
+<!--                <h2 class="nhsuk-table__heading-tab">Results</h2>-->
+<!--                <table class="nhsuk-table">-->
+<!--                    <thead class="nhsuk-table__head">-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <th role="columnheader" scope="col">Type</th>-->
+<!--                        <th role="columnheader" scope="col">Name</th>-->
+<!--                        <th role="columnheader" scope="col">alt code</th>-->
+<!--                        <th role="columnheader" scope="col">From</th>-->
+<!--                        <th role="columnheader" scope="col">To</th>-->
+<!--                        <th role="columnheader" scope="col">OU code</th>-->
+<!--                        <th role="columnheader" scope="col">Select</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody class="nhsuk-table__body">-->
+<!--                    <tr role="row" class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">Commissioner or provider in England</td>-->
+<!--                        <td class="nhsuk-table__cell">Blackburn with Darwen CCG</td>-->
+<!--                        <td class="nhsuk-table__cell">FRQ12</td>-->
+<!--                        <td class="nhsuk-table__cell">01/04/2013</td>-->
+<!--                        <td class="nhsuk-table__cell">31/12/9999</td>-->
+<!--                        <td class="nhsuk-table__cell">422</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-ou-code="FRQ12" >Select</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">Commissioner or provider in England</td>-->
+<!--                        <td class="nhsuk-table__cell">Central Manchaster CCG</td>-->
+<!--                        <td class="nhsuk-table__cell">XXW00</td>-->
+<!--                        <td class="nhsuk-table__cell">01/04/2013</td>-->
+<!--                        <td class="nhsuk-table__cell">31/03/2017</td>-->
+<!--                        <td class="nhsuk-table__cell">492</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-ou-code="XXW00">Select</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr class="nhsuk-table__row">-->
+<!--                        <td class="nhsuk-table__cell">Commissioner or provider in England</td>-->
+<!--                        <td class="nhsuk-table__cell">Newcastle North and East CCG</td>-->
+<!--                        <td class="nhsuk-table__cell">TTG00</td>-->
+<!--                        <td class="nhsuk-table__cell">01/04/2013</td>-->
+<!--                        <td class="nhsuk-table__cell">31/03/2015</td>-->
+<!--                        <td class="nhsuk-table__cell">497</td>-->
+<!--                        <td class="nhsuk-table__cell"><a href="#" class="nhsuk-link&#45;&#45;no-visited-state" data-ou-code="TTG00">Select</a></td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+<!--                <nav class="nhsuk-pagination" aria-label="Pagination" role="navigation" >-->
+<!--                    <ul class="nhsuk-list nhsuk-pagination__list">-->
+<!--                        <li class="" style="display: inline-block; margin-right: 10px">-->
+<!--                            <a href="" class="nhsuk-pagination__link " >-->
+<!--                                <span class="" aria-hidden="true" role="presentation" style="">«</span>-->
+<!--                                <span class="" >Previous</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--                        <li class="" style="display: inline-block;">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">1</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">2</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="">-->
+<!--                                <span class="" style="">3</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--                        <li class="" style="display: inline-block">-->
+<!--                            <a href="" class="nhsuk-pagination__link " style="margin-left: 10px">-->
+<!--                                <span class="" style="">Next</span>-->
+<!--                                <span class="" aria-hidden="true" role="presentation" style="margin: 0">»</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <span style="display: inline; float: right">Showing 1 - 3 of 10 results</span>-->
+<!--                    </ul>-->
+<!--                </nav>-->
+<!--            </div>-->
+
+
+
+
+<!--        </div>-->
+
+<!--    </details>-->
+
+    <span class="nhsuk-hint">
+        If the main code is not known you can carry out a &nbsp;
+        <a href="parent-search?optional=true" class="nhsuk-link--no-visited-state 3 nhsuk-u-margin-bottom-2 nhsuk-u-font-size-19" style="margin-left: -10px; display: inline-block">
+            parent search
+        </a>
+    </span>
+
+    <form action="">
+
+        <fieldset class="nhsuk-fieldset" role="group" >
+
+
+
+                        <div class="nhsuk-form-group">
+                            <legend
+                                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                                <label id="qcompanyNameLabel" class="nhsuk-heading-s nhsuk-u-margin-bottom-1"
+                                       for="identity1">Parent Type</label>
+                            </legend>
+
+                            <select id="identity1"
+                                    class="nhsuk-select nhsuk-input--width-10" style="width:100%"
+                                    aria-labelledby="qcompanyNameLabel">
+                                <option value=""></option>
+                                <option value="Commissioner or Provider in England">Commissioner or Provider in England</option>
+                                <option value="Community Unit">Community Unit</option>
+                                <option value="Hospital Trust">Hospital Trust</option>
+                                <option value="Primary Care Trusts (PCT) ">Primary Care Trusts (PCT) </option>
+                                <option value="STP">STP</option>
+                            </select>
+                        </div>
+
+
+                        <div class="nhsuk-form-group">
+                            <label for="code" class="nhsuk-label nhsuk-label--s" id="label-type">Main Code</label>
+                            <input type="text" id="code" class="nhsuk-input  nhsuk-input--width-20" >
+                        </div>
+
+
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">Start Date</legend>
+                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">End Date</legend>
+                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                    <div class="nhsuk-date-input" id="example">
+
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                                <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                                <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                                <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="nhsuk-form-group">
+                <div class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                        Do you want to add further relationships?
+                    </legend>
+
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+                        <div class="nhsuk-radios__item">
+                            <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                            <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                            <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                            <label for="no" class="nhsuk-label nhsuk-radios__label">No</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <button id="continue" class="nhsuk-button nhsuk-u-margin-top-3">Continue</button>
+
+    </form>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Parent type',
+        showAllValues: true,
+        selectElement : document.querySelector('#code'),
+    })
+</script>
+
+<script>
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+<script>
+    const queryParams = window.location.search;
+    const urlParams = new URLSearchParams(queryParams);
+    const change = urlParams.get('change');
+    const mainCode = urlParams.get('maincode');
+
+    if(mainCode != null || mainCode != 'undefined'){
+        const maincodeInput = document.querySelector('#code');
+        maincodeInput.value=mainCode;
+    }
+
+    const backLink = document.querySelector('#back-link');
+
+    if(change =='true') {
+        backLink.href="summary.html";
+    }
+
+
+
+</script>
+
+<script>
+
+    const button = document.querySelector('#continue');
+
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const queryParams = window.location.search;
+        const urlParams = new URLSearchParams(queryParams);
+        const change = urlParams.get('change');
+
+        const radioSelectedValue = document.querySelector('input[name="further-attributes"]:checked').value;
+
+        if(radioSelectedValue === 'yes'){
+            if(change == 'true'){
+                window.location.href='insert-relationship-additional?change=true';
+            }else{
+                window.location.href='insert-relationship-additional';
+            }
+
+        } else {
+            if(change == 'true'){
+                window.location.href="summary.html";
+            } else {
+                window.location.href="insert-address";
+            }
+
+        }
+    });
+
+</script>
+
+<!--show results table when search button is clicked-->
+<script>
+    const btnSearch = document.querySelector('#btn-search');
+
+    btnSearch.addEventListener('click', (event) => {
+        event.preventDefault();
+        const tblResults = document.querySelector('#table-results');
+        tblResults.removeAttribute('hidden');
+
+    })
+
+    //    Hide results table when reset filter button is clicked
+
+    const btnReset = document.querySelector('#btn-reset');
+
+    btnReset.addEventListener('click', (event) => {
+        event.preventDefault();
+        const searchForm = document.querySelector('#search-form');
+        searchForm.reset();
+
+        //hide the result table
+        const tblResults = document.querySelector('#table-results');
+        tblResults.setAttribute('hidden', 'true');
+    });
+
+
+    //update the main form with the selected OU code and collapse the details
+    const selectElements = document.querySelectorAll('[data-ou-code]');
+    console.log(selectElements);
+
+    selectElements.forEach(selectElem => {
+        selectElem.addEventListener("click", (event) => {
+            event.preventDefault();
+            const ouCode = event.currentTarget.dataset.ouCode;
+            const code = document.querySelector('#code');
+            console.log(code);
+            code.value = ouCode;
+
+            //collapse
+            const details = document.querySelector('#details');
+            details.removeAttribute('open');
+
+        }) ;
+    })
+</script>
+
+
+{% endblock %}

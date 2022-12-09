@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block optional %}
+<a style="color: white; float: right;" href="insert-type-optional" class="nhsuk-breadcrumb__link">Go to optional</a>
+{% endblock %}
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled'
+        : 'js-enabled');
+</script>
+
+
+
+<div class="nhsuk-width-container">
+
+    <h1 class="nhsuk-heading-l" id="heading">Update lead prescriber</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Bree JS</h2>
+        <p>From: 16-May-2016 <br/>
+            To: 31-December-9999
+        </p>
+
+    <form action="">
+
+        <div class="nhsuk-form-group" id="startdate-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">Date effective</legend>
+                <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                <span class="nhsuk-error-message" id="error-startdate" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Enter a valid start date
+            </span>
+
+                <div class="nhsuk-date-input" id="organisation-startdate">
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                            <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                            <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                            <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3 ">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group " id="enddate-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">Date inactive</legend>
+                <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+                <span class="nhsuk-error-message" id="error-enddate" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Enter a valid end date
+            </span>
+
+                <div class="nhsuk-date-input" id="organisation-enddate">
+
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                            <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                            <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                        </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                            <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                            <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3 ">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="../../tree" id="btn-save">save</a>
+    </form>
+
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Organisation unit / Prescriber dispenser',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+
+
+{% endblock %}

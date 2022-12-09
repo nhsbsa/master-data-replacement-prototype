@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree view</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/bulkmove-date-page" class="nhsuk-breadcrumb__link">Date</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/bulkmove-request-page" class="nhsuk-breadcrumb__link">Request</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Bulk move page for:
+            </h1>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Target organisation name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Chelsea and Westminster hospital
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="bulkmove-search-page">
+                        Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Alt Code
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    RMQ00
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="#">
+                        <span class="nhsuk-u-visually-hidden"> code</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Current effective date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    01 April 2004 to 31 December 9999
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="bulkmove-date-page">
+                        Change<span class="nhsuk-u-visually-hidden"> date</span>
+                    </a>
+
+                </dd>
+
+            </div>
+        </dl>
+
+
+        <!--        <legend class="nhsuk-fieldset__legend nhsuk-label&#45;&#45;l">-->
+        <!--            <h2 class="nhsuk-fieldset__heading">-->
+        <!--                Current effective date 01/06/2022-->
+        <!--            </h2>-->
+        <!--        </legend>-->
+        <!--        <div class="column-half">-->
+        <!--        <div class="nhsuk-action-link">-->
+        <!--            <a class="nhsuk-action-link__link" href="bulkmove-search-page">-->
+        <!--                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">-->
+        <!--                    <path d="M0 0h24v24H0z" fill="none"></path>-->
+        <!--                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>-->
+        <!--                </svg>-->
+        <!--                <span class="nhsuk-action-link__text">Change organisation target</span>-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--            <div class="nhsuk-action-link">-->
+        <!--                <a class="nhsuk-action-link__link"  href="bulkmove-date-page">-->
+        <!--                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">-->
+        <!--                        <path d="M0 0h24v24H0z" fill="none"></path>-->
+        <!--                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>-->
+        <!--                    </svg>-->
+        <!--                    <span class="nhsuk-action-link__text">Change target date</span>-->
+        <!--                </a>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <details class="nhsuk-details ">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Do you want to filter results
+    </span>
+
+            </summary>
+            <div class="nhsuk-details__text">
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                           value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        Name
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                           value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        Code
+                    </label>
+                </div>
+                </fieldset>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="example">
+                        Enter name or code
+                    </label>
+                    <input class="nhsuk-input" id="example" name="example" type="text">
+                </div>
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+
+                        <a class="nhsuk-button nhsuk-button--secondary" type="submit " href="">
+                            Filter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </details>
+
+
+        <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption">Source item</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Code
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Remove
+                </th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM000
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <a href="" title="External website">Remove
+                    </a>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM001
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <a href="" title="External website">Remove
+                    </a>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM002
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <a href="" title="External website">Remove
+                    </a>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Age </span>Hospital
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">How much? </span>RQM003
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <a href="" title="External website">Remove
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit " href="../tree">
+                    Save
+                </a>
+                <a class="nhsuk-button nhsuk-button--secondary" type="submit " href="bulkmove-view-page">
+                    Cancel
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

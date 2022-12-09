@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block optional %}
+<a style="color: white; float: right;" href="globalreferenceedit-page" class="nhsuk-breadcrumb__link">Back to
+    origional</a>
+{% endblock %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="globalReference-page" class="nhsuk-breadcrumb__link">Global reference</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="globalReferenceresults-page" class="nhsuk-breadcrumb__link">Global reference results</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Edit global reference
+            </h1>
+        </div>
+        <fieldset class="nhsuk-fieldset">
+
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="address-town">
+                    ID
+                </label>
+
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" value="IPPTitle" id="address-town"
+                       name="address-town" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+
+                    <p>Value</p>
+<!--                    <div class="nhsuk-hint" id="example-hint">-->
+<!--                        For example, 15 3 1984-->
+<!--                    </div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                    Day
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"value="01" id="example-day"
+                                       name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                                    Month
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" value="02"
+                                       id="example-month" name="example-month" type="text" pattern="[0-9]*"
+                                       inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                                    Year
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"value="2010"
+                                       id="example-year" name="example-year" type="text" pattern="[0-9]*"
+                                       inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="address-town">
+                    Description
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" value="Null"
+                       id="address-town" name="address-town" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                 <p>Date effective</p>
+<!--                    <div class="nhsuk-hint" id="example-hint">-->
+<!--                        For example, 15 3 1984-->
+<!--                    </div>-->
+
+                    <div class="nhsuk-date-input" id="example">
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                    Day
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day"value="01"
+                                       name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                                    Month
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"value="01"
+                                       id="example-month" name="example-month" type="text" pattern="[0-9]*"
+                                       inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                                    Year
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"value="0001"
+                                       id="example-year" name="example-year" type="text" pattern="[0-9]*"
+                                       inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+
+        </fieldset>
+
+        <a class="nhsuk-button" type="submit " href="globalReferenceresults-page">
+            Enter
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}

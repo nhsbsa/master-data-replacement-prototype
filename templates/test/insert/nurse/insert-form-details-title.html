@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert nurse</h1>
+    <h2 class="nhsuk-heading-m" id="parent">Bevan group practice</h2>
+<!--    <h3 class="nhsuk-heading-s" id="parent-type">Parent Type: GP practice / Cost centre </h3>-->
+    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+
+    <form action="">
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+<!--                        <div class="nhsuk-form-group">-->
+<!--                            <label for="title" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-1">-->
+<!--                                Title-->
+<!--                            </label>-->
+<!--                            <select class="nhsuk-select" name="title" id="title">-->
+<!--                                <option value=""></option>-->
+<!--                                <option value="Mr">Mr</option>-->
+<!--                                <option value="Mrs">Mrs</option>-->
+<!--                                <option value="Ms">MS</option>-->
+<!--                                <option value="Miss">Miss</option>-->
+<!--                                <option value="Doctor">Doctor</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+
+
+                <div class="nhsuk-form-group">
+                    <div class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                            Title
+                        </legend>
+
+                        <div class="nhsuk-hint nhsuk-u-margin-bottom-3">
+                            Select one option
+                        </div>
+
+                        <div class="nhsuk-radios">
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="mr" name="title" value="mr">
+                                <label for="mr" class="nhsuk-label nhsuk-radios__label">Mr</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="mrs" name="title" value="mrs">
+                                <label for="mrs" class="nhsuk-label nhsuk-radios__label">Mrs</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="ms" name="title" value="Ms">
+                                <label for="ms" class="nhsuk-label nhsuk-radios__label">Ms</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="miss" name="title" value="miss">
+                                <label for="miss" class="nhsuk-label nhsuk-radios__label">Miss</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input type="radio" class="nhsuk-radios__input" id="doctor" name="title" value="doctor">
+                                <label for="doctor" class="nhsuk-label nhsuk-radios__label">Doctor</label>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-form-details-initials" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

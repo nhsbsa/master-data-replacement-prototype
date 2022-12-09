@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-name" class="nhsuk-breadcrumb__link">Name</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert</h1>
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1 " id="parent">Organisational unit name</h2>
+    <p class="nhsuk-u-margin-bottom-3" id="alt-code">Alt code: xxxx</p>
+    <!--    <p>From: 01-July-2022 <br/>-->
+    <!--        To: 01-July-9999-->
+    <!--    </p>-->
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="insert-name" class="nhsuk-back-link__link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Go back-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <form action="">
+        <fieldset class="nhsuk-fieldset" role="group" >
+            <div class="nhsuk-form-group">
+                <label for="type" class="nhsuk-label nhsuk-label--s" id="label-type">Code</label>
+                <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+            </div>
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">Start Date</legend>-->
+<!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                    <div class="nhsuk-date-input" id="example">-->
+
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </fieldset>-->
+<!--            </div>-->
+
+<!--            <div class="nhsuk-form-group">-->
+<!--                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">-->
+<!--                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s">End Date</legend>-->
+<!--                    <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>-->
+
+<!--                    <div class="nhsuk-date-input" id="example">-->
+
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>-->
+<!--                                <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>-->
+<!--                                <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-2" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="nhsuk-date-input__item">-->
+<!--                            <div class="nhsuk-form-group">-->
+<!--                                <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>-->
+<!--                                <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input&#45;&#45;width-3" disabled>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </fieldset>-->
+<!--            </div>-->
+
+        </fieldset>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-ocs-code" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+
+<script>
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+<script>
+    const queryParams = window.location.search;
+    const urlParams = new URLSearchParams(queryParams);
+
+    let heading = urlParams.get('name');
+
+    heading = heading.replaceAll('%', ' ');
+
+    document.querySelector('#label-type').textContent = heading + " code";
+
+
+
+    document.querySelector('#continue').addEventListener("click", (event) => {
+        event.currentTarget.href=`insert-ocs-code?name=${heading}`;
+    })
+</script>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Show historic data
+            </h1>
+        </div>
+        <form>
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+
+                    </legend>
+
+                    <div class="nhsuk-hint" id="example-hint">
+                        Select to view historic data
+                    </div>
+
+                    <div class="nhsuk-checkboxes">
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
+                                   value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                                Yes I would like to view historic data
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+            </div>
+
+        </form>
+
+
+
+            <a class="nhsuk-button" type="submit " href="../index">
+                Enter
+            </a>
+    </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-xl">Insert success</h1>
+
+    <h2 class="nhsuk-heading-l">Additional information</h2>
+
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-three-quarters">
+
+            <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Alt code
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        0098
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Code
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        xxxx
+                    </dd>
+                </div>
+
+            </dl>
+        </div>
+    </div>
+    <a class="nhsuk-button" type="submit" href="SearchResultsnontab-page" id="search">
+        Search
+    </a>
+    <a href="../tree.html" class="nhsuk-link--no-visited-state" >Return to homepage</a>
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth()+1;
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

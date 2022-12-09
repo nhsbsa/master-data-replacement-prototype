@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../test/index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../insert/insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-form-details" class="nhsuk-breadcrumb__link">Nurse Details</a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert nurse</h1>
+    <h2 class="nhsuk-heading-l" id="parent">Bevan group practice</h2>
+    <h3 class="nhsuk-heading-s" id="parent-code">Parent code: xxxx</h3>
+<!--    <p>From: 01-July-2022 <br/>-->
+<!--        To: 01-July-9999-->
+<!--    </p>-->
+
+
+    <form action="">
+
+
+<!--        <div class="nhsuk-form-group">-->
+<!--            <label for="qualification" class="nhsuk-label nhsuk-label&#45;&#45;s nhsuk-u-margin-bottom-2">-->
+<!--                Qualification-->
+<!--            </label>-->
+<!--            <select class="nhsuk-select" name="gender" id="qualification">-->
+<!--                <option value=""></option>-->
+<!--                <option value="District nurse / Health visitor">District nurse / Health visitor</option>-->
+<!--                <option value="Nurse independent prescriber">Nurse independent prescriber</option>-->
+<!--            </select>-->
+<!--        </div>-->
+
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                    <span class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Qualification</span>
+                </legend>
+
+
+                <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="option-1" name="qualification">
+                        <label for="option-1" class="nhsuk-label nhsuk-radios__label">District nurse / Health visitor</label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" name="qualification" class="nhsuk-radios__input" id="option-2">
+                        <label for="option-2" class="nhsuk-label nhsuk-radios__label">Nurse independent prescriber</label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                    Do you want to add further attributes?
+                </legend>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                        <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                        <label for="no" class="nhsuk-label nhsuk-radios__label">No</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-form-address" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+
+<script>
+
+    const continueBtn = document.querySelector('#continue');
+
+    continueBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const radioOption = document.querySelector('input[name="further-attributes"]:checked');
+
+
+        if(radioOption.value == 'yes'){
+            window.location.href ='additional-attribute';
+        }else {
+            window.location.href='insert-form-address';
+        }
+
+    })
+
+</script>
+
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

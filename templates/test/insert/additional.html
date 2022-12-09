@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert</h1>
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="insert-ocs-code" class="nhsuk-back-link__link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Go back-->
+<!--        </a>-->
+<!--    </div>-->
+
+<form action="">
+
+    <fieldset class="nhsuk-fieldset " role="group" >
+        <div class="nhsuk-form-group">
+            <legend
+                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <label id="qcompanyNameLabel" class="nhsuk-heading-s nhsuk-u-margin-bottom-1"
+                       for="identity0">Attribute</label>
+            </legend>
+
+            <select id="identity0"
+                    class="nhsuk-select" style="width:100%"
+                    aria-labelledby="qcompanyNameLabel">
+                <option value=""></option>
+                <option>Email Address</option>
+                <option>Hospital Alt Name</option>
+                <option>Hospital E-PACT Start Date</option>
+                <option>Hospital Speciality</option>
+                <option>Statutory Name</option>
+                <option>Main Hospital Ind</option>
+                <option>Hospital Dummy Code Ind</option>
+                <option>Hospital Tel Number</option>
+            </select>
+        </div>
+
+    </fieldset>
+    <a class="nhsuk-button nhsuk-u-margin-top-3" href="additional-attribute.html" id="continue">Continue</a>
+</form>
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Attributes',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+<script>
+
+
+    document.querySelector('#continue').addEventListener("click",  (event) => {
+
+        const queryParams = window.location.search;
+        const urlParams = new URLSearchParams(queryParams);
+
+        const change = urlParams.get('change');
+
+        let val = document.querySelector('#identity0').value;
+        val= val.replaceAll(' ', '%')
+        document.querySelector('#continue').href = `additional-attribute?option=${val}&change=${change}`;
+    })
+
+</script>
+
+
+{% endblock %}

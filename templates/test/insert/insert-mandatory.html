@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="insert-type" class="nhsuk-breadcrumb__link">Insert</a>
+</li>
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="nhsuk-width-container">
+    <h1 class="nhsuk-heading-l">Insert</h1>
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-1 " id="parent">Organisational unit name</h2>
+    <p class="nhsuk-u-margin-bottom-3" id="alt-code">Alt code: xxxx</p>
+    <p>From: 01-July-2022 <br/>
+        To: 01-July-9999
+    </p>
+
+
+
+    <form action="">
+        <div class="nhsuk-form-group">
+            <label for="type" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type">Name</label>
+            <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label for="type" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type">Code</label>
+            <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label for="type" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2" id="label-type">OCS Code</label>
+            <input type="text" id="type" class="nhsuk-input  nhsuk-input--width-20">
+        </div>
+
+        <div class="nhsuk-form-group nhsuk-u-margin-top-6">
+            <div class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                    Do you want to add optional attributes?
+                </legend>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="yes" name="further-attributes" value="yes">
+                        <label for="yes" class="nhsuk-label nhsuk-radios__label">Yes</label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                        <input type="radio" class="nhsuk-radios__input" id="no" name="further-attributes" value="no">
+                        <label for="no" class="nhsuk-label nhsuk-radios__label" >No</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="insert-code" id="continue">Continue</a>
+
+    </form>
+
+
+
+</div>
+
+<script>
+
+    const date = new Date();
+    const day = "01";
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+
+    const startDay = document.querySelector('#start-day');
+    const startMonth = document.querySelector('#start-month');
+    const startYear = document.querySelector('#start-year');
+
+    startDay.value = day;
+    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();
+    startYear.value = year.toString();
+</script>
+
+<script>
+
+    const button = document.querySelector('#continue');
+
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const radioSelectedValue = document.querySelector('input[name="further-attributes"]:checked').value;
+
+        if(radioSelectedValue === 'yes'){
+            window.location.href='additional-attribute?change=false';
+        } else {
+            window.location.href='insert-relationship';
+        }
+
+    });
+
+</script>
+
+
+<!--<script>-->
+<!--    const queryParams = window.location.search;-->
+<!--    const urlParams = new URLSearchParams(queryParams);-->
+
+<!--    let heading = urlParams.get('name');-->
+
+<!--    heading = heading.replaceAll('%', ' ');-->
+
+<!--    document.querySelector('#label-type').textContent = heading + " name";-->
+
+<!--    document.querySelector('#continue').addEventListener("click", (event) => {-->
+<!--        event.currentTarget.href=`insert-code?name=${heading}`;-->
+<!--    })-->
+
+<!--</script>-->
+
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="Options-page" class="nhsuk-breadcrumb__link">Options</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Audit search page
+            </h1>
+        </div>
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Start date
+            </h1>
+        </legend>
+        <div class="nhsuk-hint" id="example-hint">
+            For example, 15 3 1984
+        </div>
+
+        <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                        Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                        Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                        Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+<br>
+    <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                    End date
+                </h1>
+            </legend>
+            <div class="nhsuk-hint" id="example-hint">
+                For example, 15 3 1984
+            </div>
+
+            <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                            Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                            Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                            Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+</div>
+        <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Please note it will take some time for the audit information to be retrieved if you select a large date range.</p>
+        </div>
+<p></p>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-20">
+                User
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-20">
+                Code
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1"> Transaction type
+            </label>
+            <div class="nhsuk-hint" id="example-uom-hint">
+
+            </div>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="TAUD_TRANS_TYP"></option>
+                <option value="2">Tref Globe challenge</option>
+                <option value="3">MOD Prescriber</option>
+                <option value="4">PD insert</option>
+                <option value="5">PD update</option>
+                <option value="6">OU insert</option>
+                <option value="7">Ou update</option>
+                <option value="8">Change address</option>
+                <option value="9">List size update</option>
+                <option value="10">Lead prescriber update</option>
+                <option value="11">Budget insert </option>
+                <option value="12">Budget update</option>
+                <option value="13">Financial adjustment insert</option>
+                <option value="14">Financial adjustment update</option>
+                <option value="15">Request insert</option>
+                <option value="16">Request update</option>
+                <option value="17">Manufacturer insert</option>
+                <option value="18">Manufacturer update</option>
+                <option value="19">Product insert </option>
+                <option value="20">Product update</option>
+                <option value="21">Presentation insert </option>
+                <option value="22">Presentation update</option>
+                <option value="23">Pack insert</option>
+                <option value="24">Pack update</option>
+                <option value="25">Code insert</option>
+                <option value="26">Code update</option>
+                <option value="27">Statistical volume insert</option>
+                <option value="28">Statistical volume update</option>
+                <option value="29">Quick price insert</option>
+                <option value="30">Statistical volume insert</option>
+                <option value="31">Statistical volume update</option>
+                <option value="32">Quick price insert</option>
+                <option value="33">Quick price update</option>
+                <option value="34">Housekeeping Properties</option>
+            </select>
+
+        </div>
+        <div class="column-two-thirds">
+            <a class="nhsuk-button" type="submit " href="audit-summary-page">
+                Search
+            </a>
+
+        </div>
+
+</div>
+</div>
+{% endblock %}

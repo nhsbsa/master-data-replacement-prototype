@@ -1,0 +1,679 @@
+{% extends "base.html" %}
+
+{% block optional %}
+<a style="color: white; float: right;" href="insert-type-optional" class="nhsuk-breadcrumb__link">Go to optional</a>
+{% endblock %}
+
+
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../main/Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree.html" class="nhsuk-breadcrumb__link">Tree</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled'
+        : 'js-enabled');
+</script>
+
+
+
+<div class="nhsuk-width-container">
+
+    <h1 class="nhsuk-heading-l" id="heading">Insert </h1>
+    <h2 class="nhsuk-heading-l " id="parent"> </h2>
+<!--    <p class="nhsuk-u-margin-bottom-3" id="alt-code">Alt code: xxxx</p>-->
+
+        <p>From: 01-July-2022 <br/>
+            To: 01-July-9999
+        </p>
+
+
+
+
+
+
+
+<!--    <div class="nhsuk-back-link">-->
+<!--        <a href="../tree.html" class="nhsuk-back-link__link">-->
+<!--            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">-->
+<!--                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>-->
+<!--            </svg>-->
+<!--            Cancel-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <div class="nhsuk-error-summary" hidden
+         aria-labelledby="errors-summary"
+         role="alert"
+          id="error-summary">
+        <h2 class="nhsuk-error-summary__title"
+            id="errors-summary">
+            There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list" id="error-ul">
+            </ul>
+        </div>
+
+    </div>
+
+<form action="">
+
+<!--    <div class="nhsuk-form-group " id="insert-type-form-group">-->
+<!--        <fieldset class="nhsuk-fieldset">-->
+<!--            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;m ">-->
+<!--                <span class="nhsuk-fieldset__heading">Insert type</span>-->
+<!--            </legend>-->
+
+<!--            <span class="nhsuk-error-message" id="error-insert-type" style="display: none">-->
+<!--                <span class="nhsuk-u-visually-hidden">Error:</span>-->
+<!--                Please select an insert type-->
+<!--            </span>-->
+
+<!--            <div class="nhsuk-radios nhsuk-radios&#45;&#45;inline">-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input type="radio" class="nhsuk-radios__input" id="ou" name="insert-type" value="organisational-unit">-->
+<!--                    <label for="ou" class="nhsuk-radios__label">Organisational unit</label>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input type="radio" class="nhsuk-radios__input" id="pd" name="insert-type" value="prescriber-dispenser">-->
+<!--                    <label for="pd" class="nhsuk-label nhsuk-radios__label">Prescriber dispenser</label>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </fieldset>-->
+<!--    </div>-->
+
+
+<!--    <fieldset class="nhsuk-fieldset " role="group" >-->
+<!--        <div class="nhsuk-form-group " id="type-form-group">-->
+<!--            <legend-->
+<!--                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;s nhsuk-u-margin-bottom-2">-->
+<!--                <label id="qcompanyNameLabel" class="nhsuk-label&#45;&#45;m nhsuk-u-margin-bottom-1"-->
+<!--                       for="identity0">Type</label>-->
+<!--            </legend>-->
+
+<!--            <span class="nhsuk-error-message" id="error-type" style="display: none">-->
+<!--                <span class="nhsuk-u-visually-hidden">Error:</span>-->
+<!--                Please select a type-->
+<!--            </span>-->
+
+<!--            <select id="identity0"-->
+<!--                    class="nhsuk-select nhsuk-input&#45;&#45;width-10 "-->
+<!--                    style="width:100%"-->
+<!--                    aria-labelledby="qcompanyNameLabel">-->
+<!--                <option value=""></option>-->
+<!--                <option value="Community Nurse Prescribing Contract">Community Nurse Prescribing Contract</option>-->
+<!--                <option value="Contractor">Contractor</option>-->
+<!--                <option value="GP Practice / Cost Centre">GP Practice / Cost Centre</option>-->
+<!--                <option value="Hospital">Hospital</option>-->
+<!--                <option value="Private Group">Private Group</option>-->
+
+<!--            </select>-->
+<!--        </div>-->
+<!--    </fieldset>-->
+
+
+
+<!--    <div class="nhsuk-form-group" #input-code>-->
+<!--        <label class="nhsuk-label nhsuk-label&#45;&#45;m nhsuk-u-margin-bottom-2" for="code" id="label-code">Input code</label>-->
+<!--        <input type="text" class="nhsuk-input nhsuk-input&#45;&#45;width-10" id="code">-->
+<!--    </div>-->
+
+    <!--               Community Nurse Prescribing Contract -->
+    <!--               Contractor -->
+    <!--               GP Practice / Cost Centre">GP Practice / Cost Centre -->
+    <!--               Hospital  -->
+    <!--               Private Group -->
+
+
+    <div class="nhsuk-form-group" id="type-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="type-hint error-type">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                Type
+            </legend>
+
+            <div class="nhsuk-hint" id="type-hint">
+                Select one option
+            </div>
+
+            <span class="nhsuk-error-message" aria-describedby="type-error" id="error-type" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Please select a type
+            </span>
+
+            <span class="nhsuk-error-message" aria-describedby="type-error" id="error-type2" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Please enter a code
+            </span>
+
+            <div class="nhsuk-radios nhsuk-radios--conditional" id="conditional">
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input class="nhsuk-radios__input" id="type-1" name="type" type="radio" value="Community nurse prescribing contract" aria-controls="conditional-type-1" aria-expanded="false">-->
+<!--                    <label class="nhsuk-label nhsuk-radios__label" for="type-1">-->
+<!--                        Community nurse prescribing contract-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-radios__conditional nhsuk-radios__conditional&#45;&#45;hidden" id="conditional-type-1">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label" for="code-option-1">-->
+<!--                            Input code-->
+<!--                        </label>-->
+<!--                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-1" name="input-code" type="text">-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input class="nhsuk-radios__input" id="type-2" name="type" type="radio" value="Contractor" aria-controls="conditional-type-2" aria-expanded="false">-->
+<!--                    <label class="nhsuk-label nhsuk-radios__label" for="type-2">-->
+<!--                        Contractor-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-radios__conditional nhsuk-radios__conditional&#45;&#45;hidden" id="conditional-type-2">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label" for="code-option-2">-->
+<!--                            Input code-->
+<!--                        </label>-->
+<!--                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-2" name="input-code" type="text">-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input class="nhsuk-radios__input" id="type-3" name="type" type="radio" value="GP practice / Cost centre" aria-controls="conditional-type-3" aria-expanded="false">-->
+<!--                    <label class="nhsuk-label nhsuk-radios__label" for="type-3">-->
+<!--                        GP practice / Cost centre-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-radios__conditional nhsuk-radios__conditional&#45;&#45;hidden" id="conditional-type-3">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label" for="code-option-3">-->
+<!--                            Input code-->
+<!--                        </label>-->
+<!--                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-3" name="input-code" type="text">-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input class="nhsuk-radios__input" id="type-4" name="type" type="radio" value="Hospital" aria-controls="conditional-type-4" aria-expanded="false">-->
+<!--                    <label class="nhsuk-label nhsuk-radios__label" for="type-4">-->
+<!--                        Hospital-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-radios__conditional nhsuk-radios__conditional&#45;&#45;hidden" id="conditional-type-4">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label" for="code-option-4">-->
+<!--                            Input code-->
+<!--                        </label>-->
+<!--                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-4" name="input-code" type="text">-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="nhsuk-radios__item">-->
+<!--                    <input class="nhsuk-radios__input" id="type-5" name="type" type="radio" value="Private Group" aria-controls="conditional-type-5" aria-expanded="false">-->
+<!--                    <label class="nhsuk-label nhsuk-radios__label" for="type-5">-->
+<!--                        Private Group-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="nhsuk-radios__conditional nhsuk-radios__conditional&#45;&#45;hidden" id="conditional-type-5">-->
+<!--                    <div class="nhsuk-form-group">-->
+<!--                        <label class="nhsuk-label" for="code-option-5">-->
+<!--                            Input code-->
+<!--                        </label>-->
+<!--                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-5" name="input-code" type="text">-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+        </fieldset>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="nhsuk-form-group" id="startdate-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">Start Date</legend>
+            <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+            <span class="nhsuk-error-message" id="error-startdate" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Enter a valid start date
+            </span>
+
+            <div class="nhsuk-date-input" id="organisation-startdate">
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="start-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                        <input type="text" id="start-day" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="start-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                        <input type="text" id="start-month" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="start-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                        <input type="text" id="start-year" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3 ">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="nhsuk-form-group " id="enddate-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">End Date</legend>
+            <div class="nhsuk-hint" id="example-hint">For example, 15 3 1984</div>
+
+            <span class="nhsuk-error-message" id="error-enddate" style="display: none">
+                <span class="nhsuk-u-visually-hidden">Error:</span>
+                Enter a valid end date
+            </span>
+
+            <div class="nhsuk-date-input" id="organisation-enddate">
+
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="end-day" class="nhsuk-label nhsuk-date-input__label">Day</label>
+                        <input type="text" id="end-day" value="31" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="end-month" class="nhsuk-label nhsuk-date-input__label">Month</label>
+                        <input type="text" id="end-month" value="12" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 ">
+                    </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                        <label for="end-year" class="nhsuk-label nhsuk-date-input__label">Year</label>
+                        <input type="text" id="end-year" value="9999" class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-3 ">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+
+
+
+    <a class="nhsuk-button nhsuk-u-margin-top-5" href="insert-mandatory" id="continue">Continue</a>
+</form>
+</div>
+
+<script type="text/javascript">
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue : '',
+        autoselect : false,
+        placeholder : 'Organisation unit / Prescriber dispenser',
+        showAllValues: true,
+        selectElement : document.querySelector('#identity0'),
+    })
+</script>
+
+<script defer>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams);
+
+    const parentParam = urlParams.get('parent');
+
+
+    const headingParam = urlParams.get('heading')
+    const heading = document.querySelector('#heading');
+    heading.insertAdjacentHTML('beforeend', `<span>${headingParam}</span>`);
+
+    const parent = document.querySelector('#parent');
+    parent.insertAdjacentHTML('beforeend', `<span class="nhsuk-heading-s nhsuk-u-margin-bottom-0">${parentParam}</span>`);
+
+    let orgType = urlParams.get('type');
+    orgType = orgType.substring(0, orgType.length-8);
+
+    const conditional = document.querySelector('#conditional');
+    let arr;
+
+
+    if(orgType == 'Country') {
+        arr = buildConditionalHTML(["Health and wellbeing borad area (HWB)", "MOD region", "MOD RO dummy", "Oxygen supplier", "Payment site" , "Regional office of the NHS executive"]);
+    }
+
+    if(orgType == 'Regional Office of the NHS executive') {
+        arr = buildConditionalHTML(["STP"]);
+    }
+
+    if(orgType == 'STP') {
+        arr = buildConditionalHTML(["Commissioner or provider in England", "GP practice / Cost centre", "Hospital trust", "Primary care group"]);
+    }
+
+    if(orgType == 'Hospital Trust') {
+        arr = buildConditionalHTML(["Community nurse prescribing contract", "GP practice / Cost centre", "Private Group", "STP"]);
+    }
+
+    if(orgType == 'Commissioner or provider in England') {
+        arr = buildConditionalHTML(["Community nurse prescribing contract", "Contractor", "GP practice / Cost centre", "Hospital", "Private group"]);
+    }
+
+    if(orgType == 'GP Practice / Cost Centre') {
+        arr = buildConditionalHTML(["General practioner", "Nurse"]);
+    }
+
+
+
+   arr.forEach(option =>  conditional.insertAdjacentHTML("beforeend", option));
+
+    function buildConditionalHTML(options){
+
+        return  options.map((name,i) => {
+
+            if(name == 'GP practice / Cost centre' || name == 'Oxygen supplier' || name=='Contractor' || name=='Private group'){
+                return `<div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="type-${i}" name="type" type="radio" value="${name}" aria-controls="conditional-type-${i}" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="type-${i}">
+                    ${name}
+                </label>
+        </div>`
+            };
+
+            return `<div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="type-${i}" name="type" type="radio" value="${name}" aria-controls="conditional-type-${i}" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="type-${i}">
+                    ${name}
+                </label>
+        </div>
+        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-type-${i}">
+            <div class="nhsuk-form-group">
+
+                <label class="nhsuk-label" for="code-option-${i}">
+                    ${name  == 'General practioner' ?  'PD code' : 'Input code'}
+                </label>
+                <div class="nhsuk-hint">${name  == 'General practioner' ?  'Leave PD code blank if you would like this auto assigned' : ''}</div>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="code-option-${i}" name="input-code" type="text">
+            </div>
+        </div`
+        });
+    }
+
+
+
+
+    document.querySelector('#continue').addEventListener("click", (event) => {
+        event.preventDefault();
+        // const selected = document.querySelector('#identity0').value;
+
+        const errorSummary = document.querySelector('#error-summary');
+        const errorUl = document.querySelector('#error-ul');
+        // const insertTypeFG = document.querySelector('#insert-type-form-group');
+        // const fancySearchBox = document.querySelector('#identity0');
+        const typeFG = document.querySelector('#type-form-group');
+        const startdateFG = document.querySelector('#startdate-form-group');
+        const enddateFG = document.querySelector('#enddate-form-group');
+       // const spanErrorInsertType = document.querySelector('#error-insert-type');
+        const spanErrorType = document.querySelector('#error-type');
+        const spanErrorType2 = document.querySelector('#error-type2');
+        const spanErrorStartdate = document.querySelector('#error-startdate');
+        const spanErrorEnddate = document.querySelector('#error-enddate');
+        const startDay = document.querySelector('#start-day');
+        const startMonth = document.querySelector('#start-month');
+        const startYear = document.querySelector('#start-year');
+        const endDay = document.querySelector('#end-day');
+        const endMonth = document.querySelector('#end-month');
+        const endYear = document.querySelector('#end-year');
+        const typeInputs = document.querySelectorAll('[name="input-code"]');
+
+
+        //clear previous errors
+        const errors = errorUl.querySelectorAll('li');
+        errors.forEach(error => error.remove());
+        // insertTypeFG.classList.remove('nhsuk-form-group--error');
+        // spanErrorInsertType.style.display="none";
+        typeFG.classList.remove('nhsuk-form-group--error');
+        spanErrorType.style.display="none";
+        spanErrorType2.style.display="none";
+        // fancySearchBox.classList.remove('nhsuk-input--error');
+        startdateFG.classList.remove('nhsuk-form-group--error');
+        enddateFG.classList.remove('nhsuk-form-group--error');
+        spanErrorStartdate.style.display="none";
+        spanErrorEnddate.style.display="none";
+        startDay.classList.remove('nhsuk-input--error');
+        startMonth.classList.remove('nhsuk-input--error');
+        startYear.classList.remove('nhsuk-input--error');
+        endDay.classList.remove('nhsuk-input--error');
+        endMonth.classList.remove('nhsuk-input--error');
+        endYear.classList.remove('nhsuk-input--error');
+
+        typeInputs.forEach(input => input.classList.remove('nhsuk-input--error'));
+
+
+
+        let hasErrors = false;
+
+        //validate radios
+        // const insertType = document.querySelector('input[name="insert-type"]:checked');
+        //
+        // let hasErrors = false;
+        // if(insertType?.value == "undefined" || insertType == null) {
+        //     hasErrors=true;
+        //     console.log("error inserttype: "  + hasErrors);
+        //     //show error summary
+        //     errorSummary.removeAttribute('hidden');
+        //     //add error to the ul
+        //     errorUl.insertAdjacentHTML("beforeend", `<li>
+        //             <a href="#ou" >Please select an insert type</a>
+        //         </li>`);
+        //     //add error class to form group
+        //     insertTypeFG.classList.add('nhsuk-form-group--error');
+        //     //add span error
+        //     spanErrorInsertType.style.display="block";
+        // }
+
+        //validate type
+        // const type = fancySearchBox.value;
+        // if(type == "" || type == null){
+        //     hasErrors=true;
+        //     console.log("error type: "  + hasErrors);
+        //     //show error summary
+        //     errorSummary.removeAttribute('hidden');
+        //     //add error to the ul
+        //     errorUl.insertAdjacentHTML("beforeend", `<li>
+        //             <a href="#identity0">Please select a type</a>
+        //         </li>`);
+        //     //add error class to form group
+        //     typeFG.classList.add('nhsuk-form-group--error');
+        //     //add span error
+        //     spanErrorType.style.display="block";
+        //     //add error class to input
+        //     fancySearchBox.classList.add('nhsuk-input--error');
+        // }
+
+        //validate radio types & input
+        const selectedType = document.querySelector('[name="type"]:checked');
+
+        if(selectedType == null || selectedType == ""){
+            hasErrors=true;
+            //show error summary
+                errorSummary.removeAttribute('hidden');
+            //add error to the ul
+                errorUl.insertAdjacentHTML("beforeend", `<li>
+                        <a href="#type-1">Please select a type</a>
+                    </li>`);
+            //     //add error class to form group
+                typeFG.classList.add('nhsuk-form-group--error');
+            //     //add span error
+                spanErrorType.style.display="block";
+            //     //add error class to input
+                //fancySearchBox.classList.add('nhsuk-input--error');
+        } else if (selectedType !== null ){
+
+            const idToSearch = selectedType.getAttribute('aria-controls');
+
+                const divId = document.querySelector('#' + idToSearch);
+
+                if(divId !== null){
+                    const inputToAddError = divId.querySelector('input');
+                    const inputsID = inputToAddError.getAttribute('id');
+
+                    if (inputToAddError && inputToAddError.value == "") {
+                        hasErrors=true;
+                        inputToAddError.classList.add("nhsuk-input--error");
+                        errorUl.insertAdjacentHTML("beforeend", `<li>
+                            <a href=#${inputsID}>Please enter a code</a>
+                        </li>`);
+                        //     //add error class to form group
+                        typeFG.classList.add('nhsuk-form-group--error');
+                        //     //add span error
+                        spanErrorType.style.display = "none";
+                        spanErrorType2.style.display = "block";
+                    }
+                }
+        }
+
+
+
+        // validate startdate
+
+        if(startDay.value == "" || startMonth.value == "" || startYear.value == ""){
+            hasErrors=true;
+            //show error summary
+            errorSummary.removeAttribute('hidden');
+            //add error to the ul
+            errorUl.insertAdjacentHTML("beforeend", `  <li>
+                    <a href="#organisation-startdate">Enter a valid start date</a>
+                </li>`);
+            //add error class to form group
+            startdateFG.classList.add('nhsuk-form-group--error');
+            //add span error
+            spanErrorStartdate.style.display="block";
+            //add error class to input
+
+            //add error class to all three
+            if(startDay.value == "" && startMonth.value == "" && startYear.value == "") {
+                startDay.classList.add('nhsuk-input--error');
+                startMonth.classList.add('nhsuk-input--error');
+                startYear.classList.add('nhsuk-input--error');
+            } else if (startDay.value == "" && startMonth.value == ""){
+                startDay.classList.add('nhsuk-input--error');
+                startMonth.classList.add('nhsuk-input--error');
+
+            } else if(startMonth.value == "" && startYear.value == ""){
+                startMonth.classList.add('nhsuk-input--error');
+                startYear.classList.add('nhsuk-input--error');
+            } else if(startDay.value == "" && startYear.value == "") {
+                startDay.classList.add('nhsuk-input--error');
+                startYear.classList.add('nhsuk-input--error');
+            } else if (startDay.value == "" ){
+                startDay.classList.add('nhsuk-input--error');
+            } else if (startMonth.value == ""){
+                startMonth.classList.add('nhsuk-input--error');
+            } else if (startYear.value == "") {
+                startYear.classList.add('nhsuk-input--error');
+            }
+        }
+
+
+        // validate enddate
+
+        if(endDay.value == "" || endMonth.value == "" || endYear.value == ""){
+            hasErrors=true;
+            //show error summary
+            errorSummary.removeAttribute('hidden');
+            //add error to the ul
+            errorUl.insertAdjacentHTML("beforeend", `<li>
+                    <a href="#organisation-enddate">Enter a valid end date</a>
+                </li>`);
+            //add error class to form group
+            enddateFG.classList.add('nhsuk-form-group--error');
+            //add span error
+            spanErrorEnddate.style.display="block";
+
+            //add error class to input
+
+            //add error class to all three
+            if(endDay.value == "" && endMonth.value == "" && endYear.value == "") {
+                endDay.classList.add('nhsuk-input--error');
+                endMonth.classList.add('nhsuk-input--error');
+                endYear.classList.add('nhsuk-input--error');
+            } else if (endDay.value == "" && endMonth.value == ""){
+                endDay.classList.add('nhsuk-input--error');
+                endMonth.classList.add('nhsuk-input--error');
+
+            } else if(endMonth.value == "" && endYear.value == ""){
+                endMonth.classList.add('nhsuk-input--error');
+                endYear.classList.add('nhsuk-input--error');
+            } else if(endDay.value == "" && endYear.value == "") {
+                endDay.classList.add('nhsuk-input--error');
+                endYear.classList.add('nhsuk-input--error');
+            } else if (endDay.value == "" ){
+                endDay.classList.add('nhsuk-input--error');
+            } else if (endMonth.value == ""){
+                endMonth.classList.add('nhsuk-input--error');
+            } else if (endYear.value == "") {
+                endYear.classList.add('nhsuk-input--error');
+            }
+        }
+
+
+
+        if(!hasErrors){
+
+            if(selectedType.value == 'General practioner'){
+                window.location.href = 'gp/insert-form-details-mandatory';
+            }else if (selectedType.value == 'Nurse'){
+                window.location.href = 'nurse/insert-form-details-mandatory';
+
+            }else if (selectedType.value == 'Lead prescriber') {
+                window.location.href = 'lp/insert-form-details';
+            }else {
+                window.location.href = 'insert-mandatory';
+            }
+
+
+        }
+
+
+
+    })
+
+</script>
+
+
+
+<!--<script>-->
+<!--    const date = new Date();-->
+<!--    const day = "01";-->
+<!--    const month = date.getMonth()+1;-->
+<!--    const year = date.getFullYear();-->
+
+
+<!--    const startDay = document.querySelector('#start-day');-->
+<!--    const startMonth = document.querySelector('#start-month');-->
+<!--    const startYear = document.querySelector('#start-year');-->
+
+<!--    startDay.value = day;-->
+<!--    startMonth.value = month < 10 ? "0"+month.toString() : month.toString();-->
+<!--    startYear.value = year.toString();-->
+
+<!--</script>-->
+{% endblock %}

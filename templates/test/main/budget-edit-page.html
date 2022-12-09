@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="budget-financial-start-date" class="nhsuk-breadcrumb__link">Date</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="budget-summary-page" class="nhsuk-breadcrumb__link">Summary</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1> Budget edit page
+            </h1>
+            <h2> Budget set for Primary Care Trust (PCT) 02Q00 Bassetlaw CCG
+            </h2>
+
+        </div>
+
+        <hr>
+
+        <div class="nhsuk-grid-row nhsuk-u-padding-left-3">
+            <div>
+                <h2>Enter budget</h2>
+                <div class="nhsuk-hint" id="example-hint">
+                    Some kind of hint towards budget entering
+                </div>
+                <br>
+                <div class="nhsuk-grid-column-one-third nhsuk-u-padding-left-0">
+                    <h3>Practice</h3>
+                    <p class="nhsuk-u-font-size-22">Leywood surgery</p>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <h3>Code</h3>
+                    <p class="nhsuk-u-font-size-22">84001</p>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <h3>Enter value</h3>
+                    <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="example">
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-10 " value="5,214,063" id="input-width-10" name="test-width-10"
+                               type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit"
+                   href="budget-summary-page">
+                    Submit
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+
+<script>
+
+    const searchBtn = document.querySelector('#search');
+    const field = document.querySelector('#code');
+
+    searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(field.value);
+
+        if(field.value == ""){
+         window.location = "Searchnoresult-page";
+        }else {
+        window.location="SearchResultsnontab-page";
+        }
+    }
+    );
+
+
+
+
+
+
+</script>
+
+
+{% endblock %}

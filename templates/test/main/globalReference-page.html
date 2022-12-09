@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block optional %}
+<a style="color: white; float: right;" href="SearchResultsnontab-page" class="nhsuk-breadcrumb__link">Back to origional</a>
+{% endblock %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Global reference
+            </h1>
+        </div>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            Enter your filter here. For example, DIN. MDR or leave blank to return all global reference data.
+        </div>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-third">
+
+         <div class="nhsuk-form-group">
+           <label class="nhsuk-label" for="example">
+             Insert filter
+           </label>
+           <input class="nhsuk-input" id="example" name="example" type="text">
+         </div>
+         </div>
+         </div>
+
+        <a class="nhsuk-button" type="submit " href="globalReferenceresults-page">
+            Enter
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}

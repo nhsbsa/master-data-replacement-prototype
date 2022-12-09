@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="Searchfor-page" class="nhsuk-breadcrumb__link">Search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="Searchcriteria-page" class="nhsuk-breadcrumb__link">Search criteria</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Search result for:
+            </h1>
+            <h2>Nurse
+            </h2>
+        </div>
+        <table role="table" class="nhsuk-table-responsive">
+            <caption class="nhsuk-table__caption"></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    NPM code
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Address
+                </th>
+
+                <th role="columnheader" class="" scope="col">
+                    GP practice code /Cost centre code
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Dates
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Select
+                </th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Code</span>99C2245E
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Name</span>M O'Donnel
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Address</span>North East Ambulance Service. NHS Trust.
+                    NE213EB/RX600
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">General practitioner/cost center code</span>Y05633
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Dates </span>01 April 2020 to 31 December 9999
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">select </span><a href="../tree">Select</a>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Code</span>99C2245E
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Name</span>M O'Donnel
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Parent org name/code</span>A medical practice.
+                    Somewhere NE232BS/RX600
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">General practitioner/cost center code</span>Y05635
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Dates </span>01 April 2010 to 01 April 2020
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">select </span><a href="#">Select</a>
+                </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Code</span>99C2245E
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Name</span>M O'Donnel
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Parent org name/code</span>Another medical practice.
+                    Somewhere else NE14TV/RX600
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">General practitioner/cost center code</span>Y05636
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Dates </span>01 April 2004 to 01 April 2010
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">select </span><a href="#">Select</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

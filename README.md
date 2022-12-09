@@ -9,7 +9,7 @@ git clone https://github.com/nhsbsa/medicines-management-prototype.git
 ```
 or
 ```shell
-git clone git@github.com:nhsbsa/medicines-management-prototype.git
+git clone git@github.com:nhsbsa/master-data-replacement-prototype.git
 ```
 ### NPM Setup
 Once the project is cloned, run the following command to download and install node dependencies:

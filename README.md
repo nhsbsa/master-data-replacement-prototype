@@ -5,7 +5,7 @@
 ### Cloning the project
 Clone the project using git:
 ```shell
-git clone https://github.com/nhsbsa/medicines-management-prototype.git
+git clone https://github.com/nhsbsa/master-data-replacement-prototype.git
 ```
 or
 ```shell

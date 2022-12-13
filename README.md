@@ -83,6 +83,11 @@ For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci
 &ensp;
 ***
 &ensp;
+## Heroku
+
+It is possible for this prototype to be viewed on Heroku. Please contact *[Matt Proctor-Leake](mailto:matthew.proctor-leake@nhs.net)* with queries relating to this.
+
+&ensp;
 ## Procedure for merging branches
 Pull in the latest version of main locally using 
 

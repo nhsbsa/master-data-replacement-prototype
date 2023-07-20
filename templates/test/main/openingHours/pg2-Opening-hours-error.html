@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="nhsuk-error-summary__body">
+                <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                    <li>
+                        <a href="#name">File uploads can only be in XL or CSV formats Only. the largest size is 10
+                            MB</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="govuk-form-group govuk-form-group--error">
+                <div class="nhsuk-width-container">
+                    <div class="column-two-thirds">
+                        <h1>Opening hours file selector
+                        </h1>
+
+                    </div>
+                    <p>To view, edit or amend the opening times you will need a file upload. This can be in XL or CSV
+                        format. The
+                        largest size is 10 megabytes (MB) </p>
+
+                    <label class="govuk-label" for="file-upload-1">
+                        Upload a file
+                    </label>
+                    <p id="file-upload-1-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> File uploads can only be in XL or CSV formats
+                        Only. the largest size is 10
+                        MB
+                    </p>
+                    <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1"
+                           type="file" aria-describedby="file-upload-1-error">
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" href="pg2A-Opening-hours-error" id="continue">
+                    Process file
+                </a>
+            </div>
+        </div>
+
+        <script>
+
+    const searchBtn = document.querySelector('#search');
+    const field = document.querySelector('#code');
+
+    searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(field.value);
+
+        if(field.value == ""){
+         window.location = "Searchnoresult-page";
+        }else {
+        window.location="Searchresult-page";
+        }
+    }
+    );
+
+
+
+
+        </script>
+
+
+        {% endblock %}

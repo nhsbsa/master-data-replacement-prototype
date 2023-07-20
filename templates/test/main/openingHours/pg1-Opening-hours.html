@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+<!--Nav-->
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="grid-row">
+    <div class="nhsuk-width-container">
+        <div class="column-two-thirds">
+            <h1>Opening hours file selector
+            </h1>
+
+        </div>
+        <p>To view, edit or amend the opening times you will need a file upload. This can be in XL or CSV format. </p>
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+                Select a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+        </div>
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a class="nhsuk-button" type="submit" href="pg2-Opening-hours-error" id="search">
+                    Process file
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+<!--    const searchBtn = document.querySelector('#search');-->
+<!--    const field = document.querySelector('#code');-->
+
+<!--    searchBtn.addEventListener("click", (e) => {-->
+<!--    e.preventDefault();-->
+
+<!--    console.log(field.value);-->
+
+<!--        if(field.value == ""){-->
+<!--         window.location = "pg2-Opening-hours-error";-->
+<!--        }else {-->
+<!--        window.location="pg2-Opening-hours-error";-->
+<!--        }-->
+<!--    }-->
+<!--    );-->
+var search = document.getElementById("search");
+
+
+</script>
+
+
+{% endblock %}

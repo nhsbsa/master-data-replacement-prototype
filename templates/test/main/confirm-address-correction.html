@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="correct-address" class="nhsuk-breadcrumb__link">Address search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="address-search-page" class="nhsuk-breadcrumb__link">Select address</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="address-correction" class="nhsuk-breadcrumb__link">Address correction</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+        <h1>Confirm address correction</h1>
+<dl class="nhsuk-summary-list">
+
+<div class="nhsuk-summary-list__row">
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Address:</dt>
+        <dd class="nhsuk-summary-list__value">
+            <p>STELLA HOUSE<br>
+            NEWBURN RIVERSIDE<br>
+            NEWCASTLE UPON TYNE<br>
+            NE15 8NY</p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+            <a href="address-search-page">
+                Change<span class="nhsuk-u-visually-hidden"> address</span>
+            </a>
+
+        </dd>
+    </div>
+</div>
+</form>
+</dl>
+        <a class="nhsuk-button" href="../index">Save</a>
+
+    </div>
+</div>
+</div>
+
+
+</body>
+
+{% endblock %}
+</html>

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Address</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="edit-address" class="nhsuk-breadcrumb__link">Edit address</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+        <h1>Confirm edit address</h1>
+        <dl class="nhsuk-summary-list">
+
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Start date:</dt>
+                    <dd class="nhsuk-summary-list__value" id="start-date"></dd>
+                </div>
+            <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">End date:</dt>
+                    <dd class="nhsuk-summary-list__value">31/12/9999</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Address:</dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <p>STELLA HOUSE<br>
+                            NEWBURN RIVERSIDE<br>
+                            NEWCASTLE UPON TYNE<br>
+                            NE15 8NY</p>
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a href="edit-address">
+                            Change<span class="nhsuk-u-visually-hidden"> address</span>
+                        </a>
+
+                    </dd>
+                </div>
+
+
+        </dl>
+        <a class="nhsuk-button" href="../index">Save</a>
+
+    </div>
+</div>
+
+<script>
+
+    function getTodaysDate() {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+
+        return `${day}/${month}/${year}`;
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('start-date').textContent = getTodaysDate();
+    });
+</script>
+
+</body>
+
+{% endblock %}
+</html>

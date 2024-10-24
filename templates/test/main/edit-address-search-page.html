@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Address</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="edit-address" class="nhsuk-breadcrumb__link">Edit address</a>
+</li>
+{% endblock %}
+
+{% block content %}
+
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+
+        <h1> Select address</h1>
+
+        <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+            <table class="nhsuk-table">
+                <h2 class="nhsuk-table__heading-tab">Addresses</h2>
+                <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                    <th>Address</th>
+                    <th>Select premises address</th>
+                    <th>Modify premises address</th>
+
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell"><p>STELLA HOUSE<br>
+                        NEWBURN RIVERSIDE<br>
+                        NEWCASTLE UPON TYNE<br>
+                        NE15 8NY</p>
+                    </td>
+                    <td class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Select premises address</span>
+                        <a class="nhsuk-link" href="selected-edit-address"
+                           type="submit">Select
+                        </a>
+                    </td>
+                    <td class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Modify premises address</span>
+                        <a class="nhsuk-link" href="edit-address?address=bridge"
+                           type="submit">Modify
+                        </a>
+                    </td>
+                </tr>
+                <tr>  <td class="nhsuk-table__cell"><p>BRIDGE HOUSE<br>
+                    152 PILIGRIM ST<br>
+                    NEWCASTLE UPON TYNE<br>
+                    NE1 6SN</p>
+                </td>
+                    <td class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Select premises address</span>
+                        <a class="nhsuk-link" href="selected-edit-address"
+                           type="submit">Select
+                        </a>
+                    </td>
+                    <td class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Modify premises address</span>
+                        <a class="nhsuk-link" href="edit-address?address=bridge"
+                           type="submit">Modify
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}
+</html>

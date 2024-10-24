@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="../tree" class="nhsuk-breadcrumb__link">Address</a>
+</li>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+        <h1>Edit address</h1>
+        <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>  If the full address is not known you can carry out an<a href="edit-search-address"> address search.</a></p></div>
+            <div>
+            <form action="">
+
+                <fieldset class="nhsuk-fieldset" role="group">
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-1"
+                               class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-3"
+                               id="label-type">Address Line 1</label>
+                        <input type="text" id="address-1" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-2" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-2">Address Line 2</label>
+                        <input type="text" id="address-2" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-3" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-3">Address Line 3</label>
+                        <input type="text" id="address-3" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-4" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-4">Address Line 4</label>
+                        <input type="text" id="address-4" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="postcode" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-5">Postcode</label>
+                        <input type="text" id="postcode" class="nhsuk-input  nhsuk-input--width-10">
+                    </div>
+                    <div class="nhsuk-form-group">
+                        <label for="Startdate" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-6">Start date</label>
+                    </div>
+                    <div class="nhsuk-hint" id="example-hint">
+                        For example, 15 3 1984
+                    </div>
+
+                    <div class="nhsuk-date-input" id="example">
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                                    Day
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example[day]" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                                    Month
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example[month]" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                                    Year
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example[year]" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nhsuk-form-group">
+                        <label for="enddate" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-7">End date:</label>
+                        <span id="enddate" class="nhsuk-text" style="font-size: 1.2rem;">31/12/9999</span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="confirm-edit-address">
+                Save
+            </a>
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    function fillAddress(addressType) {
+        if (addressType === 'stella') {
+            document.getElementById('address-1').value = 'STELLA HOUSE';
+            document.getElementById('address-2').value = 'NEWBURN RIVERSIDE';
+            document.getElementById('address-3').value = 'NEWCASTLE UPON TYNE';
+            document.getElementById('address-4').value = '';
+            document.getElementById('postcode').value = 'NE15 8NY';
+        } else if (addressType === 'bridge') {
+            document.getElementById('address-1').value = 'BRIDGE HOUSE';
+            document.getElementById('address-2').value = '152 PILIGRIM ST';
+            document.getElementById('address-3').value = 'NEWCASTLE UPON TYNE';
+            document.getElementById('address-4').value = '';
+            document.getElementById('postcode').value = 'NE1 6SN';
+        }
+    }
+    function fillCurrentDate() {
+        const today = new Date();
+        const day = today.getDate().toString().padStart(2, '0');
+        const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based, so add 1
+        const year = today.getFullYear();
+
+        // Set values in the date input fields
+        document.getElementById('example-day').value = day;
+        document.getElementById('example-month').value = month;
+        document.getElementById('example-year').value = year;
+    }
+    window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const addressType = urlParams.get('address');
+
+        if (addressType) {
+            fillAddress(addressType);
+        }
+        fillCurrentDate();
+    }
+    function submitForm() {
+        // Get form values
+        const address1 = document.getElementById('address-1').value;
+        const address2 = document.getElementById('address-2').value;
+        const address3 = document.getElementById('address-3').value;
+        const address4 = document.getElementById('address-4').value;
+        const postcode = document.getElementById('postcode').value;
+
+        // Build the URL with query parameters
+        const confirmationUrl = `confirm-address-correction?address1=${encodeURIComponent(address1)}&address2=${encodeURIComponent(address2)}&address3=${encodeURIComponent(address3)}&address4=${encodeURIComponent(address4)}&postcode=${encodeURIComponent(postcode)}`;
+
+        // Redirect to the confirmation page
+        window.location.href = confirmationUrl;
+
+        // Prevent the default form submission
+        return false;
+    }
+</script>
+{% endblock %}
+</body>
+</html>

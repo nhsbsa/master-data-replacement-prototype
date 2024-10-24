@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+
+        <h1> Correct address
+        </h1>
+        <h2>Address search</h2>
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Enter address line
+            </label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+        <div  class="column-two-thirds">
+            <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="address-search-page">Search
+            </a>
+        </div>
+</div>
+</div>
+</body>
+{% endblock %}
+</html>

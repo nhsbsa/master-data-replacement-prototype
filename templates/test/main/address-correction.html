@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block navcontent %}
+<li class="nhsuk-breadcrumb__item">
+    <a href="../index" class="nhsuk-breadcrumb__link">Home</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="correct-address" class="nhsuk-breadcrumb__link">Address search</a>
+</li>
+<li class="nhsuk-breadcrumb__item">
+    <a href="address-search-page" class="nhsuk-breadcrumb__link">Select address</a>
+</li>
+
+{% endblock %}
+
+{% block content %}
+
+
+<body>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+        <h1>Address correction</h1>
+        <div>
+            <form action="">
+
+                <fieldset class="nhsuk-fieldset" role="group">
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-1"
+                               class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-1 nhsuk-u-margin-top-3"
+                               id="label-type">Address Line 1</label>
+                        <input type="text" id="address-1" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-2" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-2">Address Line 2</label>
+                        <input type="text" id="address-2" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-3" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-3">Address Line 3</label>
+                        <input type="text" id="address-3" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="address-4" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-4">Address Line 4</label>
+                        <input type="text" id="address-4" class="nhsuk-input  nhsuk-input--width-20">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                        <label for="postcode" class="nhsuk-label nhsuk-label--s nhsuk-u-margin-bottom-2"
+                               id="label-type-5">Postcode</label>
+                        <input type="text" id="postcode" class="nhsuk-input  nhsuk-input--width-10">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="confirm-address-correction">
+                Save
+            </a>
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+                Cancel
+            </button>
+        </div>
+
+        <div class="nhsuk-table-responsive nhsuk-table__panel-with-heading-tab">
+            <table class="nhsuk-table">
+                <h2 class="nhsuk-table__heading-tab"> Occupants of address</h2>
+                <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                    <th>Name</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">NHS Business Authority
+                    </td>
+                    <td class="nhsuk-table__cell">
+                        01/01/0001
+                    </td>
+                    <td class="nhsuk-table__cell">
+                        31/12/9999
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script>
+    function fillAddress(addressType) {
+        if (addressType === 'stella') {
+            document.getElementById('address-1').value = 'STELLA HOUSE';
+            document.getElementById('address-2').value = 'NEWBURN RIVERSIDE';
+            document.getElementById('address-3').value = 'NEWCASTLE UPON TYNE';
+            document.getElementById('address-4').value = '';
+            document.getElementById('postcode').value = 'NE15 8NY';
+        } else if (addressType === 'bridge') {
+            document.getElementById('address-1').value = 'BRIDGE HOUSE';
+            document.getElementById('address-2').value = '152 PILIGRIM ST';
+            document.getElementById('address-3').value = 'NEWCASTLE UPON TYNE';
+            document.getElementById('address-4').value = '';
+            document.getElementById('postcode').value = 'NE1 6SN';
+        }
+    }
+
+    window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const addressType = urlParams.get('address');
+
+        if (addressType) {
+            fillAddress(addressType);
+        }
+    }
+    function submitForm() {
+        // Get form values
+        const address1 = document.getElementById('address-1').value;
+        const address2 = document.getElementById('address-2').value;
+        const address3 = document.getElementById('address-3').value;
+        const address4 = document.getElementById('address-4').value;
+        const postcode = document.getElementById('postcode').value;
+
+        // Build the URL with query parameters
+        const confirmationUrl = `confirm-address-correction?address1=${encodeURIComponent(address1)}&address2=${encodeURIComponent(address2)}&address3=${encodeURIComponent(address3)}&address4=${encodeURIComponent(address4)}&postcode=${encodeURIComponent(postcode)}`;
+
+        // Redirect to the confirmation page
+        window.location.href = confirmationUrl;
+
+        // Prevent the default form submission
+        return false;
+    }
+</script>
+{% endblock %}
+
+</html>
